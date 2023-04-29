@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a8ca2ac90a9d2db0a07a4720ed65b85, type: 3}
   m_Name: GameState
   m_EditorClassIdentifier: 
-  killCount: 100
-  moneyGained: 5
+  killCount: 0
+  moneyGained: 0

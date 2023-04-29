@@ -8,6 +8,7 @@ public class Enemy : Entity
     public float strength = 10f;
     public float speed = 2f;
     public float attackDistance = 1f;
+    public GameState gameState;
 
     private Entity _player;
     private Rigidbody _rigidbody;
@@ -31,6 +32,8 @@ public class Enemy : Entity
         onEntityDie.AddListener(() => {
             _rigidbody.freezeRotation = false;
             _rigidbody.useGravity = true;
+
+            gameState.killCount++;
         });
     }
 

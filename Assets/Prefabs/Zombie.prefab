@@ -83,6 +83,7 @@ MonoBehaviour:
   strength: 10
   speed: 2
   attackDistance: 5
+  gameState: {fileID: 11400000, guid: 5e15fb6996d008b3cadeff512e1ea0d9, type: 2}
 --- !u!54 &7685211666449515679
 Rigidbody:
   m_ObjectHideFlags: 0

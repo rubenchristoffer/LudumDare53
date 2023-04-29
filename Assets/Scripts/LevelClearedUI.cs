@@ -16,12 +16,6 @@ public class LevelClearedUI : MonoBehaviour
     private float killCountAmount;
     private float moneyGainedAmount;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        shown = true;
-    }
-
     // Update is called once per frame
     void Update()
     {

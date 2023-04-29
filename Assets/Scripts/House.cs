@@ -43,6 +43,13 @@ public class House : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         rigidbody.velocity = playerStandPosition.forward * 2f;
+
+        yield return new WaitForSeconds(2f);
+
+        var levelClearedUI = FindObjectOfType<LevelClearedUI>(true);
+        levelClearedUI.shown = true;
+
+        levelClearedUI.gameObject.SetActive(true);
     }
 
     void LateUpdate()
