@@ -22,6 +22,10 @@ public class Entity : MonoBehaviour
     }
 
     public void InflictDamage (float damageToInflict, Vector3 pushForce) {
+        if (GameManager.Instance.isLevelCleared) {
+            return;
+        }
+
         health -= damageToInflict;
 
         _rigidBody.AddForce(pushForce, ForceMode.Impulse);

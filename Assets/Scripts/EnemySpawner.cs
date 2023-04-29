@@ -11,7 +11,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void Spawn()
     {
-        if (!isActiveAndEnabled) {
+        if (!isActiveAndEnabled || GameManager.Instance.isLevelCleared) {
             return;
         }
 

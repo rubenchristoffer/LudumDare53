@@ -15,10 +15,23 @@ public class PlayerMovement : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody>();
         mainCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
+
+        GameManager.Instance.onLevelCleared.AddListener(() => {
+            foreach (var component in GetComponentsInChildren<Behaviour>()) {
+                component.enabled = false;
+            }
+
+            foreach (var collider in GetComponentsInChildren<Collider>()) {
+                collider.enabled = false;
+            }
+
+            _rigidbody.useGravity = false;
+            _rigidbody.velocity = Vector3.zero;
+        });
     }
 
     void Update()
-    {
+    {   
         var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out var hitInfo, Mathf.Infinity, groundMask)) {

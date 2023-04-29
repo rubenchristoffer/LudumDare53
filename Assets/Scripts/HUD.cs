@@ -14,6 +14,7 @@ public class HUD : MonoBehaviour
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI knockText;
     public TextMeshProUGUI nobodyRespondsText;
+    public Animator fadePanelAnimator;
 
     public PlayerInventory playerInventory;
 

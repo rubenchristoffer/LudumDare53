@@ -32,8 +32,6 @@ public class GameManager : MonoBehaviour
         if (!isLevelCleared) {
             isLevelCleared = true;
             onLevelCleared.Invoke();
-
-            Debug.Log("level cleared");
         }
     }
 
