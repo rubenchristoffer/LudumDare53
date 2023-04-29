@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public UnityEvent onLevelCleared { get; private set; } = new UnityEvent();
 
     public bool isLevelCleared { get; private set; }
+    public bool hasFoundGPS { get; private set; }
 
     public void SetLevelCleared () {
         if (!isLevelCleared) {
@@ -29,6 +30,10 @@ public class GameManager : MonoBehaviour
 
             Debug.Log("level cleared");
         }
+    }
+
+    public void SetGPSFound () {
+        hasFoundGPS = true;
     }
 
 }
