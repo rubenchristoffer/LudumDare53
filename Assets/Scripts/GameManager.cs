@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
@@ -34,6 +35,16 @@ public class GameManager : MonoBehaviour
 
     public void SetGPSFound () {
         hasFoundGPS = true;
+    }
+
+    void Awake () {
+        LevelGenerator.Instance.GenerateMap(8);
+
+        Transform player = GameObject.FindWithTag("Player").transform;
+
+        player.position = FindObjectsOfType<SpawnPoint>()
+            .Where(sp => sp.isActivated)
+            .First().transform.position;
     }
 
 }

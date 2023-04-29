@@ -5,16 +5,21 @@ using UnityEngine;
 public class LevelGenerator : MonoBehaviour
 {
 
+    private static LevelGenerator _instance;
+
+    public static LevelGenerator Instance {
+        get {
+            if (_instance == null) {
+                _instance = GameObject.FindObjectOfType<LevelGenerator>();
+            }
+
+            return _instance;
+        }
+    }
+
     public GameObject mapSegmentPrefab;
     public GameObject wallPrefab;
     public GameObject[] tilePrefabs;
-
-    public List<GameObject> mapSegments;
-
-    void Awake()
-    {
-        GenerateMap(8);    
-    }
 
     public Vector3 GetWorldPosition(int xCoordinate, int yCoordinate) {
         return new Vector3(xCoordinate * 60, 0, yCoordinate * 60);
@@ -25,9 +30,18 @@ public class LevelGenerator : MonoBehaviour
     }
 
     public void GenerateMap (int sizeFactor) {
+        Vector2Int playerSpawnPoint = new Vector2Int(
+            Random.Range(1, sizeFactor - 1),
+            Random.Range(1, sizeFactor - 1)
+        );
+
         for (int x = 0; x < sizeFactor; x++) {
             for (int y = 0; y < sizeFactor; y++) {
                 GameObject obj = Instantiate<GameObject>(mapSegmentPrefab, GetWorldPosition(x, y), Quaternion.identity);
+
+                if (x == playerSpawnPoint.x && y == playerSpawnPoint.y) {
+                    obj.GetComponentInChildren<SpawnPoint>().isActivated = true;
+                }
 
                 foreach (var tile in obj.GetComponentsInChildren<Tile>()) {
                     tile.PopulateTile(tilePrefabs[Random.Range(0, tilePrefabs.Length)]);
