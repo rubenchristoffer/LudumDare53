@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
 
             currentSpawnerIndex = (currentSpawnerIndex + 1) % enemySpawners.Length;
 
-            enemySpawnTimer = 0.01f;
+            enemySpawnTimer = 0.8f;
         } else {
             enemySpawnTimer -= Time.deltaTime;
         }
