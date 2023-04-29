@@ -6,12 +6,26 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public float speed = 8f;
+    public LayerMask groundMask;
 
     private Rigidbody _rigidbody;
+    private Camera mainCamera;
 
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        mainCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
+    }
+
+    void Update()
+    {
+        var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out var hitInfo, Mathf.Infinity, groundMask)) {
+            var direction = hitInfo.point - transform.position;
+
+            transform.forward = direction;
+        }
     }
 
     void FixedUpdate()
