@@ -1557,6 +1557,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapSegmentPrefab: {fileID: 253861209528255397}
+  wallPrefab: {fileID: 6257433099048428469, guid: 67eb93b52058a61f985efd24b0597989,
+    type: 3}
   tilePrefabs:
   - {fileID: 2678030283565419814, guid: 50d2675f4e499ace9b870de7e603347b, type: 3}
   mapSegments: []
