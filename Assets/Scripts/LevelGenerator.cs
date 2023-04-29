@@ -103,6 +103,10 @@ public class LevelGenerator : MonoBehaviour
             }
         }
 
+        var houses = GameObject.FindObjectsOfType<House>();
+
+        houses[Random.Range(0, houses.Length)].correctHouse = true;
+
         float mapSize = GetMapSize(sizeFactor);
 
         SpawnWall(sizeFactor, new Vector3(mapSize / 2f - 30f, 0f, 0f), Vector3.zero);
