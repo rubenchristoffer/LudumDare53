@@ -128,7 +128,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8836714d6e8a7392e80a63f870fd2baa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpeed: 40
+  projectileSpeed: 80
+  projectileDamage: 25
+  pushForce: 10
 --- !u!96 &1661689625
 TrailRenderer:
   serializedVersion: 2

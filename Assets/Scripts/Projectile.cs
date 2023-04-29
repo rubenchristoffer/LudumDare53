@@ -6,8 +6,11 @@ public class Projectile : MonoBehaviour
 {
 
     public float projectileSpeed = 40f;
+    public float projectileDamage = 10f;
+    public float pushForce = 2f;
 
     private Rigidbody _rigidbody;
+    private bool _hasHitSomething;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +21,22 @@ public class Projectile : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider collider) {
-        Debug.Log("hit something");
+        if (_hasHitSomething) {
+            return;
+        }
+
+        var enemy = collider.GetComponentInParent<Enemy>();
+
+
+        if (enemy != null) {
+            if (enemy.isDead) {
+                return;
+            }
+
+            enemy.InflictDamage(projectileDamage, transform.forward * pushForce);
+        }
+
+        _hasHitSomething = true;
+        Destroy(gameObject);
     }
 }
