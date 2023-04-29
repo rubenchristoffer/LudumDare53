@@ -13,6 +13,7 @@ public class HUD : MonoBehaviour
     public TextMeshProUGUI distanceText;
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI knockText;
+    public TextMeshProUGUI nobodyRespondsText;
 
     public PlayerInventory playerInventory;
 
@@ -40,6 +41,7 @@ public class HUD : MonoBehaviour
         moneyText.text = $"${playerInventory.money}";
 
         knockText.gameObject.SetActive(displayKnockText);
+
         displayKnockText = false;
     }
 }

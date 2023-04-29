@@ -6,22 +6,19 @@ public class House : MonoBehaviour
 {
 
     public AudioSource knockAudio;
-
-    private HUD hud;
-
-    public Transform door;
-
-    private Transform _player;
-
     public bool correctHouse;
     public bool knocked;
+    public Transform door;
 
-    void Awake () {
+    private HUD hud;
+    private Transform _player;
+
+    void Awake() {
         hud = GameObject.FindAnyObjectByType<HUD>();
         _player = GameObject.FindWithTag("Player").transform;
     }
 
-    void LateUpdate () {
+    void LateUpdate(){
         if (knocked) {
             return;
         }
@@ -35,8 +32,11 @@ public class House : MonoBehaviour
                 knockAudio.Play();
                 knocked = true;
 
-                if (correctHouse) {
+                if (correctHouse)
+                {
                     GameManager.Instance.SetLevelCleared();
+                } else {
+                    hud.nobodyRespondsText.GetComponent<Animator>().SetTrigger("Active");
                 }
             }
         }
