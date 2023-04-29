@@ -1010,6 +1010,75 @@ MonoBehaviour:
   distanceText: {fileID: 44309413}
   moneyText: {fileID: 127376471}
   playerInventory: {fileID: 11400000, guid: 5b4ff3dd376eb975abb2ec09f95a2184, type: 2}
+--- !u!1001 &1184848656
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2561999544733533351, guid: 8411a7e6c970cf6ea8fb0fd685cfcc47,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561999544733533351, guid: 8411a7e6c970cf6ea8fb0fd685cfcc47,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561999544733533351, guid: 8411a7e6c970cf6ea8fb0fd685cfcc47,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561999544733533351, guid: 8411a7e6c970cf6ea8fb0fd685cfcc47,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561999544733533351, guid: 8411a7e6c970cf6ea8fb0fd685cfcc47,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561999544733533351, guid: 8411a7e6c970cf6ea8fb0fd685cfcc47,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561999544733533351, guid: 8411a7e6c970cf6ea8fb0fd685cfcc47,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561999544733533351, guid: 8411a7e6c970cf6ea8fb0fd685cfcc47,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561999544733533351, guid: 8411a7e6c970cf6ea8fb0fd685cfcc47,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561999544733533351, guid: 8411a7e6c970cf6ea8fb0fd685cfcc47,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561999544733533351, guid: 8411a7e6c970cf6ea8fb0fd685cfcc47,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4201549509002353112, guid: 8411a7e6c970cf6ea8fb0fd685cfcc47,
+        type: 3}
+      propertyPath: m_Name
+      value: MapSegment
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8411a7e6c970cf6ea8fb0fd685cfcc47, type: 3}
 --- !u!1 &1394941847
 GameObject:
   m_ObjectHideFlags: 0
@@ -1283,9 +1352,19 @@ MonoBehaviour:
     type: 3}
   wallPrefab: {fileID: 6257433099048428469, guid: 67eb93b52058a61f985efd24b0597989,
     type: 3}
-  tilePrefabs:
-  - {fileID: 2678030283565419814, guid: 50d2675f4e499ace9b870de7e603347b, type: 3}
-  - {fileID: 1061251001231342253, guid: f9e121012f2c97f4d828ed2c299b2e6f, type: 3}
+  tileSpawnInfoArray:
+  - prefab: {fileID: 2678030283565419814, guid: 50d2675f4e499ace9b870de7e603347b,
+      type: 3}
+    spawnWeight: 6
+    maxPerSegment: 4
+  - prefab: {fileID: 3562039717728805019, guid: 4fc343cc37b64ae10b3f7cdb7f99042e,
+      type: 3}
+    spawnWeight: 1
+    maxPerSegment: 1
+  - prefab: {fileID: 1061251001231342253, guid: f9e121012f2c97f4d828ed2c299b2e6f,
+      type: 3}
+    spawnWeight: 2
+    maxPerSegment: 2
 --- !u!1001 &1577993762620914141
 PrefabInstance:
   m_ObjectHideFlags: 0

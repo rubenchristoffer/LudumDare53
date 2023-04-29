@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
     }
 
     void Awake () {
-        LevelGenerator.Instance.GenerateMap(8);
+        LevelGenerator.Instance.GenerateMap(12);
 
         Transform player = GameObject.FindWithTag("Player").transform;
 
