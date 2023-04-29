@@ -1496,7 +1496,7 @@ MonoBehaviour:
     maxPerSegment: 4
   - prefab: {fileID: 3562039717728805019, guid: 4fc343cc37b64ae10b3f7cdb7f99042e,
       type: 3}
-    spawnWeight: 1
+    spawnWeight: 3
     maxPerSegment: 1
   - prefab: {fileID: 1061251001231342253, guid: f9e121012f2c97f4d828ed2c299b2e6f,
       type: 3}

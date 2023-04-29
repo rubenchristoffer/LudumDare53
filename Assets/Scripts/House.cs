@@ -5,6 +5,8 @@ using UnityEngine;
 public class House : MonoBehaviour
 {
 
+    public AudioSource knockAudio;
+
     private HUD hud;
 
     public Transform door;
@@ -26,15 +28,11 @@ public class House : MonoBehaviour
 
         float distance = Vector3.Distance(door.position, _player.position);
 
-        if (distance < 20) {
-            Debug.Log(distance);
-        }
-
         if (distance <= 5f) {
             hud.displayKnockText = true;
 
             if (Input.GetButton("Interact")) {
-
+                knockAudio.Play();
                 knocked = true;
 
                 if (correctHouse) {
