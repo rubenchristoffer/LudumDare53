@@ -46,6 +46,12 @@ public class LevelGenerator : MonoBehaviour
                 foreach (var tile in obj.GetComponentsInChildren<Tile>()) {
                     tile.PopulateTile(tilePrefabs[Random.Range(0, tilePrefabs.Length)]);
                 }
+
+                if (x <= 1 || y <= 1 || x >= sizeFactor - 1 || y >= sizeFactor - 1) {
+                    foreach (var spawner in obj.GetComponentsInChildren<EnemySpawner>()) {
+                        spawner.gameObject.SetActive(false);
+                    }
+                }
             }
         }
 

@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public GameObject enemyPrefab;
+
+    private Transform _player;
+
+    public void Spawn()
     {
-        
+        if (!isActiveAndEnabled) {
+            return;
+        }
+
+        Vector3 spawnPosition = transform.position + Random.insideUnitSphere * 5f;
+        spawnPosition.y = transform.position.y;
+
+        Instantiate<GameObject>(enemyPrefab, spawnPosition, Quaternion.identity);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

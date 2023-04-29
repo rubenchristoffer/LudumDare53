@@ -26,6 +26,12 @@ public class PlayerMovement : MonoBehaviour
 
             transform.forward = direction;
         }
+
+        Vector3 rot = transform.eulerAngles;
+        rot.x = 0f;
+        rot.z = 0f;
+
+        transform.eulerAngles = rot;
     }
 
     void FixedUpdate()

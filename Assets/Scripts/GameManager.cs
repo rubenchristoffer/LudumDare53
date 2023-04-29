@@ -24,6 +24,10 @@ public class GameManager : MonoBehaviour
     public bool isLevelCleared { get; private set; }
     public bool hasFoundGPS { get; private set; }
 
+    private EnemySpawner[] enemySpawners;
+    private int currentSpawnerIndex;
+    private float enemySpawnTimer;
+
     public void SetLevelCleared () {
         if (!isLevelCleared) {
             isLevelCleared = true;
@@ -45,6 +49,23 @@ public class GameManager : MonoBehaviour
         player.position = FindObjectsOfType<SpawnPoint>()
             .Where(sp => sp.isActivated)
             .First().transform.position;
+
+        enemySpawners = FindObjectsOfType<EnemySpawner>();
+        enemySpawners = enemySpawners
+            .OrderBy(key => Random.Range(0, enemySpawners.Length - 1))
+            .ToArray();
+    }
+
+    void Update () {
+        if (enemySpawnTimer <= 0f) {
+            enemySpawners[currentSpawnerIndex].Spawn();
+
+            currentSpawnerIndex = (currentSpawnerIndex + 1) % enemySpawners.Length;
+
+            enemySpawnTimer = 0.01f;
+        } else {
+            enemySpawnTimer -= Time.deltaTime;
+        }
     }
 
 }
