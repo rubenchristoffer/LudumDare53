@@ -9,21 +9,29 @@ public class PlayerInventory : ScriptableObject
     public int money;
     public int pepperoniAmount;
     public bool hasFoundGPS;
+    public bool hasUzi;
+    public int uziAmmo;
 
     public void Reset () {
         money = 0;
         pepperoniAmount = 0;
         hasFoundGPS = false;
+        hasUzi = false;
+        uziAmmo = 0;
     }
 
     public void Save () {
         PlayerPrefs.SetInt("Money", money);
         PlayerPrefs.SetInt("PepperoniAmount", pepperoniAmount);
+        PlayerPrefs.SetInt("HasUzi", hasUzi ? 1 : 0);
+        PlayerPrefs.SetInt("UziAmmo", uziAmmo);
     }
 
     public void Load () {
         money = PlayerPrefs.GetInt("Money", 0);
         pepperoniAmount = PlayerPrefs.GetInt("PepperoniAmount", 0);
+        hasUzi = PlayerPrefs.GetInt("HasUzi", 0) == 1;
+        uziAmmo = PlayerPrefs.GetInt("UziAmmo", 0);
     }
 
 }

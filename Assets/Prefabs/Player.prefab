@@ -108,6 +108,37 @@ Transform:
   m_Father: {fileID: 3698480657118226074}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &675148297
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 675148298}
+  m_Layer: 0
+  m_Name: AImPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &675148298
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675148297}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -0.55, z: 0.598}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3052736769033072924}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1431156543
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,6 +462,42 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7565602163467176852}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2059552458275459338 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8388916486674700958, guid: 6d46fb79726988a3c82cf79ccc308573,
+    type: 3}
+  m_PrefabInstance: {fileID: 7565602163467176852}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1577993762620914144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059552458275459338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0239c911670c24d8b97af0dddd49c13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInventory: {fileID: 11400000, guid: 5b4ff3dd376eb975abb2ec09f95a2184, type: 2}
+  gunFireSound: {fileID: 387340491580356707, guid: 169cccf662a5e08588f1667095c108a8,
+    type: 3}
+  damage: 0.2
+  timeBetweenFire: 0.1
+  aimPoint: {fileID: 675148298}
+  projectilePrefab: {fileID: 9083644523671859837, guid: 41e4492444568744b87445e5ccfc51dd,
+    type: 3}
+  enemyLayerMask:
+    serializedVersion: 2
+    m_Bits: 65
+  ammoType: 1
+--- !u!4 &3052736769033072924 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4801704715565808264, guid: 6d46fb79726988a3c82cf79ccc308573,
+    type: 3}
+  m_PrefabInstance: {fileID: 7565602163467176852}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7327466555630703291 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8264651674072704721, guid: 6d46fb79726988a3c82cf79ccc308573,
@@ -449,15 +516,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0239c911670c24d8b97af0dddd49c13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInventory: {fileID: 11400000, guid: 5b4ff3dd376eb975abb2ec09f95a2184, type: 2}
   gunFireSound: {fileID: 387340491580356707, guid: 169cccf662a5e08588f1667095c108a8,
     type: 3}
   damage: 0.25
+  timeBetweenFire: 0.5
   aimPoint: {fileID: 1431156544}
   projectilePrefab: {fileID: 9083644523671859837, guid: 41e4492444568744b87445e5ccfc51dd,
     type: 3}
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 65
+  ammoType: 0
 --- !u!4 &8031275380295740543 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6d46fb79726988a3c82cf79ccc308573,
