@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float speed = 8f;
     public LayerMask groundMask;
+    public Animator animator;
 
     private Rigidbody _rigidbody;
     private Camera mainCamera;
@@ -60,6 +61,8 @@ public class PlayerMovement : MonoBehaviour
         rot.z = 0f;
 
         transform.eulerAngles = rot;
+
+        animator.SetFloat("WalkSpeedNormalized", Mathf.Min(_rigidbody.velocity.magnitude / speed, 1f));
     }
 
     void FixedUpdate()
