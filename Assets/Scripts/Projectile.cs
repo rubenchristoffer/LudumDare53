@@ -18,6 +18,13 @@ public class Projectile : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
 
         _rigidbody.velocity = transform.forward * projectileSpeed;
+
+        StartCoroutine(DieAfterTimeout());
+    }
+
+    IEnumerator DieAfterTimeout () {
+        yield return new WaitForSeconds(60f);
+        Destroy(gameObject);
     }
 
     void OnTriggerEnter(Collider collider)

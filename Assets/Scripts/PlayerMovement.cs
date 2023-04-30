@@ -45,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {   
         if (entity.isDead) {
+            animator.SetFloat("WalkSpeedNormalized", 0f);
             return;
         }
 

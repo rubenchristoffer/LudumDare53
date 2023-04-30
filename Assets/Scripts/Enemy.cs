@@ -9,6 +9,7 @@ public class Enemy : Entity
     public float speed = 2f;
     public float attackDistance = 1f;
     public GameState gameState;
+    public Animator animator;
     public Drop[] drops;
 
     private Entity _player;
@@ -20,7 +21,7 @@ public class Enemy : Entity
     private float attackCooldown = 1f;
     private float attackDelay = 0.4f;
     private float attackTimer;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,6 +60,7 @@ public class Enemy : Entity
     void Update()
     {
         if (isDead) {
+            animator.SetFloat("NormalizedWalkSpeed", 0f);
             return;
         }
 
@@ -81,6 +83,8 @@ public class Enemy : Entity
         } else {
             attackTimer -= Time.deltaTime;
         }
+
+        animator.SetFloat("NormalizedWalkSpeed", Mathf.Min(_rigidbody.velocity.magnitude / speed, 1f));
     }
 
     void FixedUpdate () {
