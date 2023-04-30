@@ -28,6 +28,9 @@ public class MainMenu : MonoBehaviour
         gameState.Reset();
         playerInventory.Reset();
 
+        gameState.Load();
+        playerInventory.Load();
+
         playButton.onClick.AddListener(() => {
             SceneManager.LoadScene("Game");
         });

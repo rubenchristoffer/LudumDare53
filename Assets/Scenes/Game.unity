@@ -3018,6 +3018,7 @@ MonoBehaviour:
   continueButton: {fileID: 1890671564}
   quitButton: {fileID: 182864051}
   gameState: {fileID: 11400000, guid: 5e15fb6996d008b3cadeff512e1ea0d9, type: 2}
+  playerInventory: {fileID: 11400000, guid: 5b4ff3dd376eb975abb2ec09f95a2184, type: 2}
   countUpTime: 2
 --- !u!1 &1544736048
 GameObject:

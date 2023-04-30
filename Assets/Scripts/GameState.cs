@@ -24,4 +24,12 @@ public class GameState : ScriptableObject
         currentStageNumber = 0;
     }
 
+    public void Save () {
+        PlayerPrefs.SetInt("CurrentStage", currentStageNumber);
+    }
+
+    public void Load () {
+        currentStageNumber = PlayerPrefs.GetInt("CurrentStage", 0);
+    }
+
 }

@@ -17,6 +17,7 @@ public class LevelClearedUI : MonoBehaviour
     public Button quitButton;
 
     public GameState gameState;
+    public PlayerInventory playerInventory;
     public float countUpTime = 2f;
 
     public bool shown { get; set; }
@@ -33,10 +34,16 @@ public class LevelClearedUI : MonoBehaviour
                 gameState.currentStageNumber--;
             }
 
+            gameState.Save();
+            playerInventory.Save();
+
             SceneManager.LoadScene("Shop");
         });
 
         quitButton.onClick.AddListener(() => {
+            gameState.Save();
+            playerInventory.Save();
+
             SceneManager.LoadScene("MainMenu");
         });
     }
