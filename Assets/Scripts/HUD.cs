@@ -10,13 +10,17 @@ public class HUD : MonoBehaviour
     private Transform _player;
     private PizzaDeliveryTile _deliveryTile;
 
+    public PlayerInventory playerInventory;
+
     public TextMeshProUGUI distanceText;
+    public TextMeshProUGUI currentStageText;
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI knockText;
     public TextMeshProUGUI nobodyRespondsText;
+    public GameObject pepperoniPanel;
+    public TextMeshProUGUI pepperoniAmountText;
     public Animator fadePanelAnimator;
 
-    public PlayerInventory playerInventory;
     public GameState gameState;
 
     public bool displayKnockText { get; set; }
@@ -26,6 +30,10 @@ public class HUD : MonoBehaviour
     void Awake()
     {
         _player = GameObject.FindWithTag("Player").transform;  
+
+        if (playerInventory.pepperoniAmount == 0) {
+            pepperoniPanel.SetActive(false);
+        }
     }
 
     void Start () {
@@ -41,6 +49,9 @@ public class HUD : MonoBehaviour
 
         distanceText.text = GameManager.Instance.hasFoundGPS ? $"{distance}m" : "No GPS";
         moneyText.text = $"${gameState.moneyGained}";
+
+        pepperoniAmountText.text = $"{playerInventory.pepperoniAmount}";
+        currentStageText.text = $"Stage {gameState.currentStageNumber}";
 
         knockText.gameObject.SetActive(displayKnockText);
 

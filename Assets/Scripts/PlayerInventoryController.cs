@@ -13,15 +13,20 @@ public class PlayerInventoryController : MonoBehaviour
 
     void Awake () {
         GameManager.Instance.onLevelCleared.AddListener(() => {
-            playerInventory.money += gameState.moneyGained;
+            playerInventory.money += gameState.moneyGained + gameState.currentStage.jobPrice;
         });
     }
 
     void Update () {
         if (playerInventory.pepperoniAmount > 0 && Input.GetButtonDown("Pepperoni")) {
             Instantiate<GameObject>(pepperoniPrefab, throwAimingPosition.position, throwAimingPosition.rotation);
+
             Instantiate<GameObject>(pepperoniPrefab, throwAimingPosition.position, throwAimingPosition.rotation * Quaternion.Euler(0f, 11.25f, 0f));
             Instantiate<GameObject>(pepperoniPrefab, throwAimingPosition.position, throwAimingPosition.rotation * Quaternion.Euler(0f, -11.25f, 0f));
+
+            Instantiate<GameObject>(pepperoniPrefab, throwAimingPosition.position, throwAimingPosition.rotation * Quaternion.Euler(0f, 22.5f, 0f));
+            Instantiate<GameObject>(pepperoniPrefab, throwAimingPosition.position, throwAimingPosition.rotation * Quaternion.Euler(0f, -22.5f, 0f));
+
             playerInventory.pepperoniAmount--;
         }
     }

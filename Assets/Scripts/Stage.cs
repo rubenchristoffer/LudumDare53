@@ -11,7 +11,7 @@ public class Stage
     public int jobPrice;
 
     public static Stage GetStage (int stage) {
-        int jobPrice = Mathf.FloorToInt(1000 * Mathf.Pow(1.4f, stage));
+        int jobPrice = Mathf.FloorToInt(100 * Mathf.Pow(1.4f, stage));
 
         if (jobPrice < 0) {
             jobPrice = 1000000;
