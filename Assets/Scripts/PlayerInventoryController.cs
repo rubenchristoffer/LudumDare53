@@ -22,7 +22,7 @@ public class PlayerInventoryController : MonoBehaviour
     }
 
     void Update () {
-        if (entity.isDead || GameManager.Instance.isLevelCleared) {
+        if (entity.isDead || GameManager.Instance.isLevelCleared || Time.timeScale <= 0.03f) {
             return;
         }
 

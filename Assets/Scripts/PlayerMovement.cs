@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        if (entity.isDead) {
+        if (entity.isDead || Time.timeScale <= 0.03f) {
             animator.SetFloat("WalkSpeedNormalized", 0f);
             return;
         }

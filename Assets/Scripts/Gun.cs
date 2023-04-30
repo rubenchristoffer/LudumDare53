@@ -25,7 +25,7 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (entity.isDead || GameManager.Instance.isLevelCleared)
+        if (entity.isDead || GameManager.Instance.isLevelCleared || Time.timeScale <= 0.03f)
         {
             return;
         }
