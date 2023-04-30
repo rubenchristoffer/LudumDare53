@@ -42,9 +42,11 @@ public class GameManager : MonoBehaviour
     }
 
     void Awake () {
-        gameState.Reset();
+        gameState.ResetCounters();
+        gameState.currentStageNumber++;
+        gameState.currentStage = Stage.GetStage(gameState.currentStageNumber);
         
-        LevelGenerator.Instance.GenerateMap(6);
+        LevelGenerator.Instance.GenerateMap(gameState.currentStage.mapSizeFactor);
 
         Transform player = GameObject.FindWithTag("Player").transform;
 
@@ -64,7 +66,7 @@ public class GameManager : MonoBehaviour
 
             currentSpawnerIndex = (currentSpawnerIndex + 1) % enemySpawners.Length;
 
-            enemySpawnTimer = 0.8f;
+            enemySpawnTimer = gameState.currentStage.spawnCooldown;
         } else {
             enemySpawnTimer -= Time.deltaTime;
         }

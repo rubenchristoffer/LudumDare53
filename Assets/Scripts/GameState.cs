@@ -8,8 +8,10 @@ public class GameState : ScriptableObject
 
     public int killCount;
     public int moneyGained;
+    public Stage currentStage;
+    public int currentStageNumber;
 
-    public void Reset () {
+    public void ResetCounters () {
         killCount = 0;
         moneyGained = 0;
     }
