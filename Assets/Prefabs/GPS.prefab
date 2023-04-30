@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346eed7ab94afc0c1a73fe74d9c48fa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupAudio: {fileID: 1687029008739931226, guid: 046462fc98f365410ba783d82f654784,
+    type: 3}
   rotateSpeed: 480
   groundMask:
     serializedVersion: 2

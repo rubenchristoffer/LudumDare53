@@ -46,12 +46,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa22e4111d97e18d9c7d9c611c620f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneyToGain: 5
+  pickupAudio: {fileID: 1687029008739931226, guid: 046462fc98f365410ba783d82f654784,
+    type: 3}
   rotateSpeed: 360
-  gameState: {fileID: 11400000, guid: 5e15fb6996d008b3cadeff512e1ea0d9, type: 2}
   groundMask:
     serializedVersion: 2
     m_Bits: 64
+  moneyToGain: 5
+  gameState: {fileID: 11400000, guid: 5e15fb6996d008b3cadeff512e1ea0d9, type: 2}
 --- !u!135 &716652072
 SphereCollider:
   m_ObjectHideFlags: 0

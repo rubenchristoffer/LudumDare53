@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public abstract class Item : MonoBehaviour
 {
 
+    public GameObject pickupAudio;
     public float rotateSpeed = 180f;
 
     public LayerMask groundMask;
@@ -40,6 +41,7 @@ public abstract class Item : MonoBehaviour
         activated = collider.GetComponentInParent<PlayerMovement>();
 
         if (activated) {
+            Instantiate(pickupAudio);
             OnPickup(collider);
             Destroy(gameObject);
         }
