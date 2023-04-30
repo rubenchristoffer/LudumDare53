@@ -7,5 +7,6 @@ public class PlayerInventory : ScriptableObject
 {
 
     public int money;
+    public int pepperoniAmount;
 
 }
