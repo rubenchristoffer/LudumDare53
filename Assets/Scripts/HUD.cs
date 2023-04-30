@@ -45,9 +45,9 @@ public class HUD : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int distance = Mathf.FloorToInt(Vector3.Distance(_player.position, correctHouse.transform.position));
+        int distance = Mathf.FloorToInt(Vector3.Distance(_player.position, correctHouse.door.position));
 
-        distanceText.text = GameManager.Instance.hasFoundGPS ? $"{distance}m" : "No GPS";
+        distanceText.text = playerInventory.hasFoundGPS ? $"{distance}m" : "No GPS";
         moneyText.text = $"${gameState.moneyGained}";
 
         pepperoniAmountText.text = $"{playerInventory.pepperoniAmount}";

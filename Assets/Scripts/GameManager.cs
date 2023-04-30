@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour
     public UnityEvent onLevelCleared { get; private set; } = new UnityEvent();
 
     public bool isLevelCleared { get; private set; }
-    public bool hasFoundGPS { get; private set; }
 
     private EnemySpawner[] enemySpawners;
     private int currentSpawnerIndex;
@@ -35,10 +34,6 @@ public class GameManager : MonoBehaviour
             isLevelCleared = true;
             onLevelCleared.Invoke();
         }
-    }
-
-    public void SetGPSFound () {
-        hasFoundGPS = true;
     }
 
     void Awake () {
