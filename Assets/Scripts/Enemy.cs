@@ -78,6 +78,7 @@ public class Enemy : Entity
         }
 
         if (attackTimer <= 0) {
+            animator.SetTrigger("Attack");
             _player.InflictDamage(strength, transform.forward * 20f);
             attackTimer = attackCooldown;
         } else {
