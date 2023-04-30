@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027c957a1d0678996bce337c28a57de4, type: 3}
   m_Name: PlayerInventory
   m_EditorClassIdentifier: 
-  money: 13
-  pepperoniAmount: 6
+  money: 1526
+  pepperoniAmount: 0
+  hasFoundGPS: 1
