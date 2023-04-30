@@ -5,6 +5,7 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
 
+    public GameObject gunFireSound;
     public float damage = 0.25f;
     public Transform aimPoint;
     public GameObject projectilePrefab;
@@ -37,6 +38,8 @@ public class Gun : MonoBehaviour
 
     void Shoot()
     {
+        Instantiate(gunFireSound);
+
         if (Physics.Raycast(aimPoint.transform.position - aimPoint.transform.forward * 0.7f, aimPoint.transform.forward, out var hit, 1f, enemyLayerMask))
         {
             var enemy = hit.transform.GetComponentInParent<Enemy>();

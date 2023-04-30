@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Enemy : Entity
 {
@@ -21,6 +22,8 @@ public class Enemy : Entity
     private float attackCooldown = 1f;
     private float attackDelay = 0.4f;
     private float attackTimer;
+
+    public UnityEvent onAttack { get; private set; } = new UnityEvent();
 
     // Start is called before the first frame update
     void Start()
@@ -78,6 +81,7 @@ public class Enemy : Entity
         }
 
         if (attackTimer <= 0) {
+            onAttack.Invoke();
             animator.SetTrigger("Attack");
             _player.InflictDamage(strength, transform.forward * 20f);
             attackTimer = attackCooldown;

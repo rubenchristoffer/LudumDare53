@@ -185,6 +185,7 @@ GameObject:
   - component: {fileID: 831859091}
   - component: {fileID: 3244018704406314904}
   - component: {fileID: 1669872787}
+  - component: {fileID: 3169108829806592379}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -295,6 +296,14 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!81 &3169108829806592379
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8637375875872904260}
+  m_Enabled: 1
 --- !u!1 &8902239305271416212
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,6 +449,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0239c911670c24d8b97af0dddd49c13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunFireSound: {fileID: 387340491580356707, guid: 169cccf662a5e08588f1667095c108a8,
+    type: 3}
   damage: 0.25
   aimPoint: {fileID: 1431156544}
   projectilePrefab: {fileID: 9083644523671859837, guid: 41e4492444568744b87445e5ccfc51dd,
