@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System.Linq;
+using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
 {
 
-    private Transform _player;
+    private Entity _player;
     private PizzaDeliveryTile _deliveryTile;
 
     public PlayerInventory playerInventory;
@@ -21,6 +22,9 @@ public class HUD : MonoBehaviour
     public TextMeshProUGUI pepperoniAmountText;
     public Animator fadePanelAnimator;
 
+    public TextMeshProUGUI healthText;
+    public Image healthFillImage;
+
     public GameState gameState;
 
     public bool displayKnockText { get; set; }
@@ -29,7 +33,7 @@ public class HUD : MonoBehaviour
 
     void Awake()
     {
-        _player = GameObject.FindWithTag("Player").transform;  
+        _player = GameObject.FindWithTag("Player").GetComponent<Entity>();  
 
         if (playerInventory.pepperoniAmount == 0) {
             pepperoniPanel.SetActive(false);
@@ -45,13 +49,16 @@ public class HUD : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int distance = Mathf.FloorToInt(Vector3.Distance(_player.position, correctHouse.door.position));
+        int distance = Mathf.FloorToInt(Vector3.Distance(_player.transform.position, correctHouse.door.position));
 
         distanceText.text = playerInventory.hasFoundGPS ? $"{distance}m" : "No GPS found";
         moneyText.text = $"${gameState.moneyGained}";
 
         pepperoniAmountText.text = $"{playerInventory.pepperoniAmount}";
         currentStageText.text = $"Stage {gameState.currentStageNumber}";
+
+        healthText.text = $"{Mathf.CeilToInt(_player.health)}";
+        healthFillImage.fillAmount = _player.health / _player.maxHealth;
 
         knockText.gameObject.SetActive(displayKnockText);
 
