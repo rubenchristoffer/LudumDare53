@@ -440,9 +440,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0239c911670c24d8b97af0dddd49c13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0.25
   aimPoint: {fileID: 1431156544}
   projectilePrefab: {fileID: 9083644523671859837, guid: 41e4492444568744b87445e5ccfc51dd,
     type: 3}
+  enemyLayerMask:
+    serializedVersion: 2
+    m_Bits: 65
 --- !u!4 &8031275380295740543 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6d46fb79726988a3c82cf79ccc308573,

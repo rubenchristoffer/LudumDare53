@@ -5,26 +5,49 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
 
+    public float damage = 0.25f;
     public Transform aimPoint;
     public GameObject projectilePrefab;
+    public LayerMask enemyLayerMask;
 
     private Entity entity;
+    private Projectile projectile;
 
     // Start is called before the first frame update
     void Start()
     {
         entity = GetComponentInParent<Entity>();
+
+        projectile = projectilePrefab.GetComponent<Projectile>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (entity.isDead) {
+        if (entity.isDead)
+        {
             return;
         }
 
-        if (Input.GetMouseButtonDown(0)) {
-            Instantiate(projectilePrefab, aimPoint.transform.position, aimPoint.transform.rotation);
+        if (Input.GetMouseButtonDown(0))
+        {
+            Shoot();
         }
     }
+
+    void Shoot()
+    {
+        if (Physics.Raycast(aimPoint.transform.position - aimPoint.transform.forward * 0.7f, aimPoint.transform.forward, out var hit, 1f, enemyLayerMask))
+        {
+            var enemy = hit.transform.GetComponentInParent<Enemy>();
+
+            if (enemy != null) {
+                enemy.InflictDamage(projectile.projectileDamage, projectile.pushForce * aimPoint.transform.forward);
+                return;
+            }
+        }
+
+        Instantiate(projectilePrefab, aimPoint.transform.position, aimPoint.transform.rotation);
+    }
+
 }

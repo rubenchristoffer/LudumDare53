@@ -129,7 +129,7 @@ MonoBehaviour:
   maxHealth: 100
   strength: 10
   speed: 2
-  attackDistance: 5
+  attackDistance: 3
   gameState: {fileID: 11400000, guid: 5e15fb6996d008b3cadeff512e1ea0d9, type: 2}
   animator: {fileID: 641450691}
   drops:
