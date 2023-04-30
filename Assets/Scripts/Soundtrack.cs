@@ -5,16 +5,19 @@ using UnityEngine;
 public class Soundtrack : MonoBehaviour
 {
 
+    public AudioSettings audioSettings;
     public bool fadeOut;
 
     private AudioSource audioSource;
 
     private float volume;
-    private float maxVolume = 0.4f;
+    private float maxVolume = 0.3f;
     private float fadeOutTime = 5f;
 
 
     void Awake () {
+        maxVolume = maxVolume * audioSettings.musicVolume;
+
         audioSource = GetComponent<AudioSource>();
         volume = maxVolume;
     }
