@@ -20,10 +20,6 @@ public class PlayerMovement : MonoBehaviour
         mainCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
 
         GameManager.Instance.onLevelCleared.AddListener(() => {
-            foreach (var component in GetComponentsInChildren<Behaviour>()) {
-                component.enabled = false;
-            }
-
             foreach (var collider in GetComponentsInChildren<Collider>()) {
                 collider.enabled = false;
             }
@@ -44,6 +40,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {   
+        if (GameManager.Instance.isLevelCleared) {
+            animator.SetFloat("WalkSpeedNormalized", Mathf.Min(_rigidbody.velocity.magnitude / speed, 1f));
+            return;
+        }
+
         if (entity.isDead) {
             animator.SetFloat("WalkSpeedNormalized", 0f);
             return;
@@ -68,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (entity.isDead) {
+        if (entity.isDead || GameManager.Instance.isLevelCleared) {
             return;
         }
 

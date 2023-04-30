@@ -27,7 +27,7 @@ public class LevelClearedUI : MonoBehaviour
 
     void Awake () {
         continueButton.onClick.AddListener(() => {
-            FindObjectOfType<HUD>().gameObject.SetActive(false);
+            FindObjectOfType<HUD>()?.gameObject.SetActive(false);
 
             if (GameManager.Instance.hasLevelFailed) {
                 gameState.currentStageNumber--;

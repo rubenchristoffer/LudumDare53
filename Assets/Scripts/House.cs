@@ -24,6 +24,8 @@ public class House : MonoBehaviour
 
     IEnumerator Cutscene()
     {
+        GameObject.FindObjectOfType<Soundtrack>().StartFadeOut();
+
         yield return new WaitForSeconds(3.1f);
 
         GameObject.FindWithTag("MainCamera").SetActive(false);
