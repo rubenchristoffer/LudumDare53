@@ -2109,6 +2109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 11400000, guid: 5b4ff3dd376eb975abb2ec09f95a2184, type: 2}
   moneyText: {fileID: 1199776896}
+  continueButton: {fileID: 38216774}
   pepperoniAmountText: {fileID: 1301183361}
   pepperoniCostText: {fileID: 782561602}
   pepperoniBuyButton: {fileID: 1342198256}

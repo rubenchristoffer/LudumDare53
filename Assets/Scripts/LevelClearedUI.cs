@@ -2,12 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LevelClearedUI : MonoBehaviour
 {
 
     public TextMeshProUGUI killCountText;
     public TextMeshProUGUI moneyGainedText;
+    public Button continueButton;
+    public Button quitButton;
+
     public GameState gameState;
     public float countUpTime = 2f;
 
@@ -15,6 +20,16 @@ public class LevelClearedUI : MonoBehaviour
 
     private float killCountAmount;
     private float moneyGainedAmount;
+
+    void Awake () {
+        continueButton.onClick.AddListener(() => {
+            SceneManager.LoadScene("Shop");
+        });
+
+        quitButton.onClick.AddListener(() => {
+            SceneManager.LoadScene("MainMenu");
+        });
+    }
 
     // Update is called once per frame
     void Update()

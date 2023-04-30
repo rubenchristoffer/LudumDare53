@@ -20,23 +20,30 @@ public class Projectile : MonoBehaviour
         _rigidbody.velocity = transform.forward * projectileSpeed;
     }
 
-    void OnTriggerEnter(Collider collider) {
-        if (_hasHitSomething) {
+    void OnTriggerEnter(Collider collider)
+    {
+        if (_hasHitSomething)
+        {
             return;
         }
 
         var enemy = collider.GetComponentInParent<Enemy>();
+        var player = collider.GetComponentInParent<PlayerMovement>();
 
-
-        if (enemy != null) {
-            if (enemy.isDead) {
+        if (enemy != null)
+        {
+            if (enemy.isDead)
+            {
                 return;
             }
 
             enemy.InflictDamage(projectileDamage, transform.forward * pushForce);
         }
 
-        _hasHitSomething = true;
-        Destroy(gameObject);
+        if (player == null)
+        {
+            _hasHitSomething = true;
+            Destroy(gameObject);
+        }
     }
 }

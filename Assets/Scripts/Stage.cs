@@ -11,10 +11,16 @@ public class Stage
     public int jobPrice;
 
     public static Stage GetStage (int stage) {
+        int jobPrice = Mathf.FloorToInt(1000 * Mathf.Pow(1.4f, stage));
+
+        if (jobPrice < 0) {
+            jobPrice = 1000000;
+        }
+
         return new Stage {
-            jobPrice = Mathf.Min(Mathf.FloorToInt(1000 * Mathf.Pow(1.4f, stage)), 1000000),
+            jobPrice = jobPrice,
             mapSizeFactor = GetMapSizeFactor(stage),
-            spawnCooldown = Mathf.Max(7f * Mathf.Pow(0.85f, stage), 0.4f)
+            spawnCooldown = Mathf.Max(7f * Mathf.Pow(0.85f, stage), 0.1f)
         };
     }
 
@@ -31,7 +37,7 @@ public class Stage
             return 10;
         }
 
-        return Mathf.Min(stage, 20);
+        return Mathf.Min(stage, 15);
     }
 
 }

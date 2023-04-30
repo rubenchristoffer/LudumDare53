@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 419987166}
   - component: {fileID: 419987169}
   - component: {fileID: 419987168}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 9083644523671859826}
   - component: {fileID: 9083644523671859827}
   - component: {fileID: 1661689625}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GunProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}

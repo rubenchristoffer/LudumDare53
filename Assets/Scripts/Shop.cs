@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Shop : MonoBehaviour
 {
 
     public PlayerInventory playerInventory;
     public TextMeshProUGUI moneyText;
+    public Button continueButton;
 
     // Pepperoni
     public const int pepperoniCost = 20;
@@ -23,6 +25,10 @@ public class Shop : MonoBehaviour
                 playerInventory.pepperoniAmount++;
                 playerInventory.money -= pepperoniCost;
             }
+        });
+
+        continueButton.onClick.AddListener(() => {
+            SceneManager.LoadScene("Game");
         });
     }
 

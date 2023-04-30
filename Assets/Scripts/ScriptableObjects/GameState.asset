@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a8ca2ac90a9d2db0a07a4720ed65b85, type: 3}
   m_Name: GameState
   m_EditorClassIdentifier: 
-  killCount: 0
-  moneyGained: 0
-  currentStage: 0
+  killCount: 70
+  moneyGained: 165
+  currentStage:
+    spawnCooldown: 0.1
+    mapSizeFactor: 15
+    jobPrice: 1000000
+  currentStageNumber: 53

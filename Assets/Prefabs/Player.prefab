@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 195108817}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hitboxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 334090211}
   - component: {fileID: 334090212}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,6 +77,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 3.905696, z: 1}
   m_Center: {x: 0, y: 2.0083392, z: 0}
+--- !u!1 &551884770
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 551884771}
+  m_Layer: 9
+  m_Name: ThrowPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &551884771
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551884770}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.163, z: 0.569}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3698480657118226074}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1431156543
 GameObject:
   m_ObjectHideFlags: 0
@@ -86,7 +117,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1431156544}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AimPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +151,8 @@ GameObject:
   - component: {fileID: 831859088}
   - component: {fileID: 831859089}
   - component: {fileID: 831859091}
-  m_Layer: 0
+  - component: {fileID: 3244018704406314904}
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -141,6 +173,7 @@ Transform:
   m_Children:
   - {fileID: 8031275380295740543}
   - {fileID: 195108817}
+  - {fileID: 551884771}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
@@ -172,7 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74f5d7ff2fab5907dabd46d282726e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 80
+  speed: 10
   groundMask:
     serializedVersion: 2
     m_Bits: 64
@@ -190,6 +223,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxHealth: 100
+--- !u!114 &3244018704406314904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8637375875872904260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f01d029fd79e37eb8af9ebd39297953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInventory: {fileID: 11400000, guid: 5b4ff3dd376eb975abb2ec09f95a2184, type: 2}
+  gameState: {fileID: 11400000, guid: 5e15fb6996d008b3cadeff512e1ea0d9, type: 2}
+  throwAimingPosition: {fileID: 551884771}
+  pepperoniPrefab: {fileID: 8015487496007724640, guid: cbb8ba2e811e4dba9bc18cca62d8e037,
+    type: 3}
 --- !u!1001 &7565602163467176852
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -252,10 +302,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8264651674072704721, guid: 6d46fb79726988a3c82cf79ccc308573,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -1790696210041165702, guid: 6d46fb79726988a3c82cf79ccc308573,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6d46fb79726988a3c82cf79ccc308573,
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6d46fb79726988a3c82cf79ccc308573,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2296393078715663276, guid: 6d46fb79726988a3c82cf79ccc308573,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d46fb79726988a3c82cf79ccc308573, type: 3}
