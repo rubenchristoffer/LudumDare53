@@ -9,4 +9,9 @@ public class GameState : ScriptableObject
     public int killCount;
     public int moneyGained;
 
+    public void Reset () {
+        killCount = 0;
+        moneyGained = 0;
+    }
+
 }

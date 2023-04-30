@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public GameState gameState;
+
     public UnityEvent onLevelCleared { get; private set; } = new UnityEvent();
 
     public bool isLevelCleared { get; private set; }
@@ -40,6 +42,8 @@ public class GameManager : MonoBehaviour
     }
 
     void Awake () {
+        gameState.Reset();
+        
         LevelGenerator.Instance.GenerateMap(6);
 
         Transform player = GameObject.FindWithTag("Player").transform;

@@ -17,6 +17,7 @@ public class HUD : MonoBehaviour
     public Animator fadePanelAnimator;
 
     public PlayerInventory playerInventory;
+    public GameState gameState;
 
     public bool displayKnockText { get; set; }
 
@@ -39,7 +40,7 @@ public class HUD : MonoBehaviour
         int distance = Mathf.FloorToInt(Vector3.Distance(_player.position, correctHouse.transform.position));
 
         distanceText.text = GameManager.Instance.hasFoundGPS ? $"{distance}m" : "No GPS";
-        moneyText.text = $"${playerInventory.money}";
+        moneyText.text = $"${gameState.moneyGained}";
 
         knockText.gameObject.SetActive(displayKnockText);
 

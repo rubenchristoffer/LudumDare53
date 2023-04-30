@@ -9,6 +9,7 @@ public class Enemy : Entity
     public float speed = 2f;
     public float attackDistance = 1f;
     public GameState gameState;
+    public Drop[] drops;
 
     private Entity _player;
     private Rigidbody _rigidbody;
@@ -20,6 +21,12 @@ public class Enemy : Entity
     private float attackDelay = 0.4f;
     private float attackTimer;
 
+    [System.Serializable]
+    public class Drop {
+        public int weight;
+        public GameObject prefab;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,11 +36,25 @@ public class Enemy : Entity
 
         speed = Random.Range(2f, 10f);
 
+        List<Drop> weightedDrops = new List<Drop>();
+
+        foreach (var drop in drops) {
+            for (int i = 0; i < drop.weight; i++) {
+                weightedDrops.Add(drop);
+            }
+        }
+
         onEntityDie.AddListener(() => {
             _rigidbody.freezeRotation = false;
             _rigidbody.useGravity = true;
 
             gameState.killCount++;
+
+            var drop = weightedDrops[Random.Range(0, weightedDrops.Count)];
+
+            if (drop.prefab != null) {
+                Instantiate<GameObject>(drop.prefab, transform.position + Vector3.up * 0.5f, drop.prefab.transform.rotation);
+            }
         });
     }
 
