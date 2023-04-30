@@ -77,7 +77,7 @@ public class PlayerInventoryController : MonoBehaviour
 
         foreach (var weapon in weapons)
         {
-            if (Input.GetKeyDown(weapon.keyCodeToEquip))
+            if (weapon.isAvailable && Input.GetKeyDown(weapon.keyCodeToEquip))
             {
                 currentlyEquippedWeapon?.physicalObject.SetActive(false);
                 currentlyEquippedWeapon = weapon;
