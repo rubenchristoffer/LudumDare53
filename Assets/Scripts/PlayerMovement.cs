@@ -32,7 +32,12 @@ public class PlayerMovement : MonoBehaviour
         });
 
         entity.onEntityDie.AddListener(() => {
+            GameManager.Instance.SetLevelFailed();
             _rigidbody.freezeRotation = false;
+
+            var levelClearedUI = FindObjectOfType<LevelClearedUI>(true);
+            levelClearedUI.gameObject.SetActive(true);
+            levelClearedUI.shown = true;
         });
     }
 

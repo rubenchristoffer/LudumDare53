@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 public class LevelClearedUI : MonoBehaviour
 {
 
+    public TextMeshProUGUI titleText;
+    public TextMeshProUGUI failedText;
     public TextMeshProUGUI deliveryFeeText;
     public TextMeshProUGUI killCountText;
     public TextMeshProUGUI moneyGainedText;
@@ -25,6 +27,12 @@ public class LevelClearedUI : MonoBehaviour
 
     void Awake () {
         continueButton.onClick.AddListener(() => {
+            FindObjectOfType<HUD>().gameObject.SetActive(false);
+
+            if (GameManager.Instance.hasLevelFailed) {
+                gameState.currentStageNumber--;
+            }
+
             SceneManager.LoadScene("Shop");
         });
 
@@ -39,6 +47,10 @@ public class LevelClearedUI : MonoBehaviour
         if (!shown) {
             return;
         }
+
+        failedText.gameObject.SetActive(GameManager.Instance.hasLevelFailed);
+        deliveryFeeText.gameObject.SetActive(!GameManager.Instance.hasLevelFailed);
+        titleText.text = GameManager.Instance.hasLevelFailed ? "You died!" : "Pizza delivered!";
 
         deliveryFeeAmount = Mathf.MoveTowards(deliveryFeeAmount, gameState.currentStage.jobPrice, gameState.currentStage.jobPrice / countUpTime * Time.deltaTime);
         killCountAmount = Mathf.MoveTowards(killCountAmount, gameState.killCount, gameState.killCount / countUpTime * Time.deltaTime);

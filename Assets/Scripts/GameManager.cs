@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     public UnityEvent onLevelCleared { get; private set; } = new UnityEvent();
 
     public bool isLevelCleared { get; private set; }
+    public bool hasLevelFailed { get; private set; }
 
     private EnemySpawner[] enemySpawners;
     private int currentSpawnerIndex;
@@ -33,6 +34,12 @@ public class GameManager : MonoBehaviour
         if (!isLevelCleared) {
             isLevelCleared = true;
             onLevelCleared.Invoke();
+        }
+    }
+
+    public void SetLevelFailed () {
+        if (!hasLevelFailed) {
+            hasLevelFailed = true;
         }
     }
 
