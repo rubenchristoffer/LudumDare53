@@ -16,4 +16,10 @@ public class GameState : ScriptableObject
         moneyGained = 0;
     }
 
+    public void Reset () {
+        ResetCounters();
+        currentStage = null;
+        currentStageNumber = 0;
+    }
+
 }
