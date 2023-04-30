@@ -6,12 +6,13 @@ public class EnemySpawner : MonoBehaviour
 {
 
     public GameObject enemyPrefab;
+    public GameState gameState;
 
     private Transform _player;
 
     public void Spawn()
     {
-        if (!isActiveAndEnabled || GameManager.Instance.isLevelCleared) {
+        if (!isActiveAndEnabled || GameManager.Instance.isLevelCleared || gameState.livingEnemies >= 1000) {
             return;
         }
 

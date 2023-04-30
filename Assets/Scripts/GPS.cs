@@ -2,17 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GPS : MonoBehaviour
+public class GPS : Item
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public PlayerInventory playerInventory;
+
+    protected override void OnPickup(Collider collider)
     {
-        
+        playerInventory.hasFoundGPS = true;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

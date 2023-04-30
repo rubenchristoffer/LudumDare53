@@ -37,13 +37,14 @@ public abstract class Item : MonoBehaviour
             return;
         }
 
-        activated = OnPickup(collider);
+        activated = collider.GetComponentInParent<PlayerMovement>();
 
         if (activated) {
+            OnPickup(collider);
             Destroy(gameObject);
         }
     }
 
-    protected abstract bool OnPickup (Collider collider);
+    protected abstract void OnPickup (Collider collider);
 
 }

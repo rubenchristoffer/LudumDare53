@@ -85,13 +85,16 @@ MonoBehaviour:
   attackDistance: 5
   gameState: {fileID: 11400000, guid: 5e15fb6996d008b3cadeff512e1ea0d9, type: 2}
   drops:
-  - weight: 10
+  - weight: 50
     prefab: {fileID: 0}
-  - weight: 4
+  - weight: 40
     prefab: {fileID: 1602268108316622977, guid: ad7ae5383c347e58785edd4af0430468,
       type: 3}
-  - weight: 1
+  - weight: 20
     prefab: {fileID: 1599098095466428814, guid: 4d1e822121744032ea7ae31a4e48bd0a,
+      type: 3}
+  - weight: 1
+    prefab: {fileID: 6113064371502321631, guid: 7fdd182f292432b9c8ea24299697b150,
       type: 3}
 --- !u!54 &7685211666449515679
 Rigidbody:
@@ -191,7 +194,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1328888222544712147}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 875378434de0060fcb45a372c439844d, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -210,7 +213,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7001752471969145767}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 875378434de0060fcb45a372c439844d, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2

@@ -47,7 +47,7 @@ public class HUD : MonoBehaviour
     {
         int distance = Mathf.FloorToInt(Vector3.Distance(_player.position, correctHouse.door.position));
 
-        distanceText.text = playerInventory.hasFoundGPS ? $"{distance}m" : "No GPS";
+        distanceText.text = playerInventory.hasFoundGPS ? $"{distance}m" : "No GPS found";
         moneyText.text = $"${gameState.moneyGained}";
 
         pepperoniAmountText.text = $"{playerInventory.pepperoniAmount}";

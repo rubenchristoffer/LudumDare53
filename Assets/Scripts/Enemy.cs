@@ -20,13 +20,7 @@ public class Enemy : Entity
     private float attackCooldown = 1f;
     private float attackDelay = 0.4f;
     private float attackTimer;
-
-    [System.Serializable]
-    public class Drop {
-        public int weight;
-        public GameObject prefab;
-    }
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +29,8 @@ public class Enemy : Entity
         _colliders = GetComponentsInChildren<Collider>(true);
 
         speed = Random.Range(2f, 10f);
+
+        gameState.livingEnemies++;
 
         List<Drop> weightedDrops = new List<Drop>();
 
@@ -49,6 +45,7 @@ public class Enemy : Entity
             _rigidbody.useGravity = true;
 
             gameState.killCount++;
+            gameState.livingEnemies--;
 
             var drop = weightedDrops[Random.Range(0, weightedDrops.Count)];
 

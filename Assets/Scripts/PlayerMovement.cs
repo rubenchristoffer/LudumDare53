@@ -10,10 +10,12 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody _rigidbody;
     private Camera mainCamera;
+    private Entity entity;
 
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        entity = GetComponent<Entity>();
         mainCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
 
         GameManager.Instance.onLevelCleared.AddListener(() => {
@@ -28,10 +30,18 @@ public class PlayerMovement : MonoBehaviour
             _rigidbody.useGravity = false;
             _rigidbody.velocity = Vector3.zero;
         });
+
+        entity.onEntityDie.AddListener(() => {
+            _rigidbody.freezeRotation = false;
+        });
     }
 
     void Update()
     {   
+        if (entity.isDead) {
+            return;
+        }
+
         var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out var hitInfo, Mathf.Infinity, groundMask)) {
@@ -49,6 +59,10 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (entity.isDead) {
+            return;
+        }
+
         _rigidbody.velocity = new Vector3(-Input.GetAxis("Vertical"), 0f, Input.GetAxis("Horizontal")) * speed;
     }
 }

@@ -11,13 +11,21 @@ public class PlayerInventoryController : MonoBehaviour
     public Transform throwAimingPosition;
     public GameObject pepperoniPrefab;
 
+    private Entity entity;
+
     void Awake () {
         GameManager.Instance.onLevelCleared.AddListener(() => {
             playerInventory.money += gameState.moneyGained + gameState.currentStage.jobPrice;
         });
+
+        entity = GetComponent<Entity>();
     }
 
     void Update () {
+        if (entity.isDead) {
+            return;
+        }
+
         if (playerInventory.pepperoniAmount > 0 && Input.GetButtonDown("Pepperoni")) {
             Instantiate<GameObject>(pepperoniPrefab, throwAimingPosition.position, throwAimingPosition.rotation);
 

@@ -9,14 +9,9 @@ public class Coin : Item
     
     public GameState gameState;
 
-    protected override bool OnPickup(Collider collider)
+    protected override void OnPickup(Collider collider)
     {
-        if (collider.GetComponentInParent<PlayerMovement>()) {
-            gameState.moneyGained += moneyToGain;
-            return true;
-        }
-
-        return false;
+        gameState.moneyGained += moneyToGain;
     }
 
 }
