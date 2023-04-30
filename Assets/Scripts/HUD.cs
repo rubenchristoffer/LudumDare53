@@ -21,6 +21,7 @@ public class HUD : MonoBehaviour
     public GameObject pepperoniPanel;
     public TextMeshProUGUI pepperoniAmountText;
     public Animator fadePanelAnimator;
+    public TextMeshProUGUI ammoText;
 
     public TextMeshProUGUI healthText;
     public Image healthFillImage;

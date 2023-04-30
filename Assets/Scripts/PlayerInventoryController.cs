@@ -23,7 +23,7 @@ public class PlayerInventoryController : MonoBehaviour
         public bool isAvailable;
     }
 
-    void Awake()
+    void Start()
     {
         GameManager.Instance.onLevelCleared.AddListener(() =>
         {

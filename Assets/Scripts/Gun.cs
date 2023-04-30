@@ -17,6 +17,7 @@ public class Gun : MonoBehaviour
     private Entity entity;
     private Projectile projectile;
     private float fireTimer;
+    private HUD hud;
 
     public int ammo {
         get => ammoType switch {
@@ -37,10 +38,10 @@ public class Gun : MonoBehaviour
         Uzi
     }
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         entity = GetComponentInParent<Entity>();
+        hud = FindObjectOfType<HUD>();
 
         projectile = projectilePrefab.GetComponent<Projectile>();
     }
@@ -53,6 +54,12 @@ public class Gun : MonoBehaviour
             return;
         }
 
+        if (ammo < int.MaxValue) {
+            hud.ammoText.text = $"{ammo}";
+        } else {
+            hud.ammoText.text = "INF";
+        }
+
         if (fireTimer <= 0)
         {
             if (Input.GetMouseButton(0) && ammo > 0)
@@ -62,7 +69,6 @@ public class Gun : MonoBehaviour
         } else {
             fireTimer -= Time.deltaTime;
         }
-
     }
 
     void Shoot()
