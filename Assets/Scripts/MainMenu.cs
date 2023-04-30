@@ -17,6 +17,8 @@ public class MainMenu : MonoBehaviour
 
     public Slider masterSlider;
     public Slider musicSlider;
+    
+    public Button resetProgressButton;
 
     void Awake () {
         masterSlider.value = PlayerPrefs.GetFloat("MasterVolume", 1f);
@@ -49,6 +51,14 @@ public class MainMenu : MonoBehaviour
         musicSlider.onValueChanged.AddListener((float value) => {
             audioSettings.musicVolume = value;
             PlayerPrefs.SetFloat("MusicVolume", value);
+        });
+
+        resetProgressButton.onClick.AddListener(() => {
+            gameState.Reset();
+            playerInventory.Reset();
+
+            gameState.Save();
+            playerInventory.Save();
         });
     }
 
