@@ -1,5 +1,5 @@
 # Deliver Me From Evil
-Check out the [official submission](https://ldjam.com/events/ludum-dare/53/$355714).
+Check out the [official submission](https://ldjam.com/events/ludum-dare/53/deliver-me-from-evil).
 
 
 ## Tools used
