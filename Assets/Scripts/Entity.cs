@@ -35,6 +35,7 @@ public class Entity : MonoBehaviour
         }
 
         if (health <= 0 && !isDead) {
+            _rigidBody.AddForceAtPosition(pushForce, transform.position + Vector3.up * 1f, ForceMode.Impulse);
             isDead = true;
             onEntityDie.Invoke();
         }
