@@ -5179,7 +5179,7 @@ MonoBehaviour:
   amountText: {fileID: 1932172716}
   keyText: {fileID: 605415586}
   iconImage: {fileID: 1567995782}
-  type: 2
+  type: 3
   notEquippable: 1
 --- !u!1 &1405472495
 GameObject:
@@ -6747,7 +6747,7 @@ MonoBehaviour:
   amountText: {fileID: 1836687984}
   keyText: {fileID: 1416179509}
   iconImage: {fileID: 1503398416}
-  type: 3
+  type: 4
   notEquippable: 1
 --- !u!114 &1808594336
 MonoBehaviour:
