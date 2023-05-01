@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     }
 
     public GameState gameState;
+    public PlayerInventory playerInventory;
 
     public UnityEvent onLevelCleared { get; private set; } = new UnityEvent();
 
@@ -44,6 +45,7 @@ public class GameManager : MonoBehaviour
     }
 
     void Awake () {
+        playerInventory.hasFoundGPS = false;
         gameState.ResetCounters();
         gameState.currentStageNumber++;
         gameState.currentStage = Stage.GetStage(gameState.currentStageNumber);
