@@ -17,7 +17,8 @@ public class ThrowableExplosive : MonoBehaviour
     void Awake () {
         _rigidbody = GetComponent<Rigidbody>();
 
-        _rigidbody.velocity = transform.forward * projectileSpeed;        
+        _rigidbody.velocity = transform.forward * projectileSpeed;      
+        _rigidbody.AddTorque(Random.insideUnitSphere * 20f); 
         StartCoroutine(ExplodeAfterTime());
     }
 

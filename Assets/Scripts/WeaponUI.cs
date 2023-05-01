@@ -22,6 +22,7 @@ public class WeaponUI : MonoBehaviour
     public int amount {
         get => type switch {
             WeaponType.Pepperoni => playerInventory.pepperoniAmount,
+            WeaponType.Grenade => playerInventory.grenadeAmount,
             WeaponType.Uzi => playerInventory.uziAmmo,
             _ => 0
         };

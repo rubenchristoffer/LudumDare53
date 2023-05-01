@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   money: 190
   pepperoniAmount: 0
+  grenadeAmount: 277
   hasFoundGPS: 0
   hasUzi: 0
   uziAmmo: 0

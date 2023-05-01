@@ -10,6 +10,7 @@ public class PlayerInventoryController : MonoBehaviour
 
     public Transform throwAimingPosition;
     public GameObject pepperoniPrefab;
+    public GameObject grenadePrefab;
 
     private Entity entity;
     private List<Weapon> weapons = new List<Weapon>();
@@ -30,7 +31,8 @@ public class PlayerInventoryController : MonoBehaviour
         Pistol,
         Uzi,
 
-        Pepperoni
+        Pepperoni,
+        Grenade
     }
 
     void Start()
@@ -85,6 +87,13 @@ public class PlayerInventoryController : MonoBehaviour
             Instantiate<GameObject>(pepperoniPrefab, throwAimingPosition.position, throwAimingPosition.rotation * Quaternion.Euler(0f, -22.5f, 0f));
 
             playerInventory.pepperoniAmount--;
+        }
+
+        if (playerInventory.grenadeAmount > 0 && Input.GetButtonDown("Grenade"))
+        {
+            Instantiate<GameObject>(grenadePrefab, throwAimingPosition.position, throwAimingPosition.rotation * Quaternion.Euler(-22.5f, 0f, 0f));
+
+            playerInventory.grenadeAmount--;
         }
 
         foreach (var weapon in weapons)

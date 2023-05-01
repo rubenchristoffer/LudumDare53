@@ -21,6 +21,10 @@ public class ZombieSound : MonoBehaviour
         noiseTimer = 1f;
 
         enemy.onAttack.AddListener(() => {
+            if (enemy.isDead) {
+                return;
+            }
+
             var sound = attackSounds[Random.Range(0, attackSounds.Length)];
             sound.pitch = Random.Range(0.9f, 1.1f);
 
@@ -28,6 +32,10 @@ public class ZombieSound : MonoBehaviour
         });
 
         enemy.onEntityDie.AddListener(() => {
+            if (enemy.isDead) {
+                return;
+            }
+
             var sound = dieSounds[Random.Range(0, dieSounds.Length)];
             sound.pitch = Random.Range(0.9f, 1.1f);
 
@@ -35,6 +43,10 @@ public class ZombieSound : MonoBehaviour
         });
 
         enemy.onEntityTakeDamage.AddListener((damage, pushForce) => {
+            if (enemy.isDead) {
+                return;
+            }
+
             var sound = hitSounds[Random.Range(0, hitSounds.Length)];
             sound.pitch = Random.Range(0.9f, 1.1f);
 

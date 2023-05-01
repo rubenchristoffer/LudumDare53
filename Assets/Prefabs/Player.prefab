@@ -450,6 +450,8 @@ MonoBehaviour:
   throwAimingPosition: {fileID: 551884771}
   pepperoniPrefab: {fileID: 8015487496007724640, guid: cbb8ba2e811e4dba9bc18cca62d8e037,
     type: 3}
+  grenadePrefab: {fileID: 5480864178538333857, guid: 3fa4a0453ee7b2a9280b4c6c53438182,
+    type: 3}
 --- !u!95 &1669872787
 Animator:
   serializedVersion: 5
