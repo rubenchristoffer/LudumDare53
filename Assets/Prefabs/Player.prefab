@@ -313,6 +313,130 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1786265950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1786265951}
+  m_Layer: 0
+  m_Name: RaycastAimPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1786265951
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786265950}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0, y: 6.6, z: 6.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8066188016715119393}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &1787287608
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1787287609}
+  m_Layer: 9
+  m_Name: RayastAimPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1787287609
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787287608}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0, y: 0.184, z: 0.343}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1813139614590091079}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &1853286269
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1853286270}
+  m_Layer: 0
+  m_Name: RaycastAimPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1853286270
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853286269}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0, y: 0.311, z: 0.598}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3052736769033072924}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &4141220865861128764
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7055947445576894327}
+  m_Layer: 0
+  m_Name: AimPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7055947445576894327
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4141220865861128764}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -35.67, z: 6.19}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8066188016715119393}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &7042084573123863604
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,7 +738,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7565602163467176852}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1577993762620914144
+--- !u!114 &3060631489381952542
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -629,9 +753,9 @@ MonoBehaviour:
   playerInventory: {fileID: 11400000, guid: 5b4ff3dd376eb975abb2ec09f95a2184, type: 2}
   gunFireSound: {fileID: 387340491580356707, guid: 169cccf662a5e08588f1667095c108a8,
     type: 3}
-  damage: 0.2
   timeBetweenFire: 0.1
   aimPoint: {fileID: 675148298}
+  raycastAimPoint: {fileID: 1853286270}
   projectilePrefab: {fileID: 9083644523671859837, guid: d652483505b231076bd8ff78b11afdb2,
     type: 3}
   enemyLayerMask:
@@ -644,6 +768,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7565602163467176852}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3151946674690971437 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4846891176605686969, guid: 6d46fb79726988a3c82cf79ccc308573,
+    type: 3}
+  m_PrefabInstance: {fileID: 7565602163467176852}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1577993762620914144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3151946674690971437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0239c911670c24d8b97af0dddd49c13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInventory: {fileID: 11400000, guid: 5b4ff3dd376eb975abb2ec09f95a2184, type: 2}
+  gunFireSound: {fileID: 387340491580356707, guid: 169cccf662a5e08588f1667095c108a8,
+    type: 3}
+  timeBetweenFire: 0.05
+  aimPoint: {fileID: 7055947445576894327}
+  raycastAimPoint: {fileID: 1786265951}
+  projectilePrefab: {fileID: 9083644523671859837, guid: e7a9fbfa43cc45c2c88675ab5bd53d31,
+    type: 3}
+  enemyLayerMask:
+    serializedVersion: 2
+    m_Bits: 65
+  ammoType: 2
 --- !u!1 &7327466555630703291 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8264651674072704721, guid: 6d46fb79726988a3c82cf79ccc308573,
@@ -665,9 +819,9 @@ MonoBehaviour:
   playerInventory: {fileID: 11400000, guid: 5b4ff3dd376eb975abb2ec09f95a2184, type: 2}
   gunFireSound: {fileID: 387340491580356707, guid: 169cccf662a5e08588f1667095c108a8,
     type: 3}
-  damage: 0.25
   timeBetweenFire: 0.5
   aimPoint: {fileID: 1431156544}
+  raycastAimPoint: {fileID: 1787287609}
   projectilePrefab: {fileID: 9083644523671859837, guid: 41e4492444568744b87445e5ccfc51dd,
     type: 3}
   enemyLayerMask:
@@ -677,6 +831,12 @@ MonoBehaviour:
 --- !u!4 &8031275380295740543 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6d46fb79726988a3c82cf79ccc308573,
+    type: 3}
+  m_PrefabInstance: {fileID: 7565602163467176852}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8066188016715119393 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8714834342906269515, guid: 6d46fb79726988a3c82cf79ccc308573,
     type: 3}
   m_PrefabInstance: {fileID: 7565602163467176852}
   m_PrefabAsset: {fileID: 0}

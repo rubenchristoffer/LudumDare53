@@ -18,3 +18,5 @@ MonoBehaviour:
   hasFoundGPS: 1
   hasUzi: 1
   uziAmmo: 1840
+  hasAK: 1
+  akAmmo: 554

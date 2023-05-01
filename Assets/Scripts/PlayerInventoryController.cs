@@ -30,6 +30,7 @@ public class PlayerInventoryController : MonoBehaviour
    public enum WeaponType {
         Pistol,
         Uzi,
+        AK47,
 
         Pepperoni,
         Grenade
@@ -58,6 +59,14 @@ public class PlayerInventoryController : MonoBehaviour
             keyCodeToEquip = KeyCode.Alpha2, 
             physicalObject = transform.FindAnyChildWithName("Uzi").gameObject,
             isAvailable = playerInventory.hasUzi
+            });
+
+        weapons.Add(new Weapon
+        { 
+            weaponType = WeaponType.AK47,
+            keyCodeToEquip = KeyCode.Alpha3, 
+            physicalObject = transform.FindAnyChildWithName("AK47").gameObject,
+            isAvailable = playerInventory.hasAK
             });
 
         foreach (var weapon in weapons)

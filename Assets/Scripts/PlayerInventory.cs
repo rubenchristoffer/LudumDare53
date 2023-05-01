@@ -13,6 +13,9 @@ public class PlayerInventory : ScriptableObject
     public bool hasUzi;
     public int uziAmmo;
 
+    public bool hasAK;
+    public int akAmmo;
+
     public void Reset () {
         money = 0;
         pepperoniAmount = 0;
@@ -20,6 +23,8 @@ public class PlayerInventory : ScriptableObject
         hasFoundGPS = false;
         hasUzi = false;
         uziAmmo = 0;
+        hasAK = false;
+        akAmmo = 0;
     }
 
     public void Save () {
@@ -28,6 +33,9 @@ public class PlayerInventory : ScriptableObject
         PlayerPrefs.SetInt("GrenadeAmount", grenadeAmount);
         PlayerPrefs.SetInt("HasUzi", hasUzi ? 1 : 0);
         PlayerPrefs.SetInt("UziAmmo", uziAmmo);
+
+        PlayerPrefs.SetInt("HasAK", hasAK ? 1 : 0);
+        PlayerPrefs.SetInt("AKAmmo", akAmmo);
     }
 
     public void Load () {
@@ -36,6 +44,9 @@ public class PlayerInventory : ScriptableObject
         grenadeAmount = PlayerPrefs.GetInt("GrenadeAmount", 0);
         hasUzi = PlayerPrefs.GetInt("HasUzi", 0) == 1;
         uziAmmo = PlayerPrefs.GetInt("UziAmmo", 0);
+
+        hasAK = PlayerPrefs.GetInt("HasAK", 0) == 1;
+        akAmmo = PlayerPrefs.GetInt("AKAmmo", 0);
     }
 
 }

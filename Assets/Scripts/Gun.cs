@@ -9,6 +9,7 @@ public class Gun : MonoBehaviour
     public GameObject gunFireSound;
     public float timeBetweenFire = 0.1f;
     public Transform aimPoint;
+    public Transform raycastAimPoint;
     public GameObject projectilePrefab;
     public LayerMask enemyLayerMask;
     public AmmoType ammoType;
@@ -22,19 +23,22 @@ public class Gun : MonoBehaviour
         get => ammoType switch {
             AmmoType.Unlimited => int.MaxValue,
             AmmoType.Uzi => playerInventory.uziAmmo,
+            AmmoType.AK47 => playerInventory.akAmmo,
             _ => 0
         };
 
         set {
             switch (ammoType) {
                 case AmmoType.Uzi: playerInventory.uziAmmo = value; break;
+                case AmmoType.AK47: playerInventory.akAmmo = value; break;
             }
         }
     }
 
     public enum AmmoType {
         Unlimited,
-        Uzi
+        Uzi,
+        AK47
     }
 
     void Awake()
@@ -76,7 +80,7 @@ public class Gun : MonoBehaviour
         ammo--;
         Instantiate(gunFireSound);
 
-        if (Physics.Raycast(aimPoint.transform.position - aimPoint.transform.forward * 0.7f, aimPoint.transform.forward, out var hit, 1f, enemyLayerMask))
+        if (Physics.Raycast(raycastAimPoint.position, aimPoint.transform.forward, out var hit, 1f, enemyLayerMask))
         {
             var enemy = hit.transform.GetComponentInParent<Enemy>();
 
