@@ -93,6 +93,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 7685211664735642708, guid: f7e19ebc014209a67a24aa1657bac7e6,
     type: 3}
+  effectPrefab: {fileID: 5736375861586756290, guid: cb09abcc0535214a5ab9c54fb28a6b67,
+    type: 3}
   gameState: {fileID: 11400000, guid: 5e15fb6996d008b3cadeff512e1ea0d9, type: 2}
 --- !u!1 &1999610063964046915
 GameObject:

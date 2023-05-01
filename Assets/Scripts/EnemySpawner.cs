@@ -6,9 +6,14 @@ public class EnemySpawner : MonoBehaviour
 {
 
     public GameObject enemyPrefab;
+    public GameObject effectPrefab;
     public GameState gameState;
 
     private Transform _player;
+
+    void Awake () {
+        _player = GameObject.FindWithTag("Player").transform;
+    }
 
     public void Spawn()
     {
@@ -19,7 +24,10 @@ public class EnemySpawner : MonoBehaviour
         Vector3 spawnPosition = transform.position + Random.insideUnitSphere * 5f;
         spawnPosition.y = transform.position.y;
 
-        Instantiate<GameObject>(enemyPrefab, spawnPosition, Quaternion.identity);
+        var enemy = Instantiate<GameObject>(enemyPrefab, spawnPosition, Quaternion.identity);
+        var effect = Instantiate<GameObject>(effectPrefab, spawnPosition, Quaternion.identity);
+
+        effect.transform.SetParent(enemy.transform);
     }
 
 }
