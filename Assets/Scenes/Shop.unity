@@ -2067,7 +2067,7 @@ MonoBehaviour:
   buyButton: {fileID: 915308851}
   amountText: {fileID: 1926212329}
   priceText: {fileID: 1000114620}
-  weaponType: 3
+  weaponType: 4
   isItem: 1
 --- !u!114 &896808797
 MonoBehaviour:
@@ -5305,7 +5305,7 @@ MonoBehaviour:
   buyButton: {fileID: 1342198256}
   amountText: {fileID: 1301183361}
   priceText: {fileID: 782561602}
-  weaponType: 2
+  weaponType: 3
   isItem: 1
 --- !u!1 &1924223842
 GameObject:
