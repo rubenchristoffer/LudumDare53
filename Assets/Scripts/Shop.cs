@@ -15,7 +15,11 @@ public class Shop : MonoBehaviour
     public Button continueButton;
 
     void Awake () {
+        playerInventory.Load();
+
         continueButton.onClick.AddListener(() => {
+            playerInventory.Save();
+
             SceneManager.LoadScene("Game");
         });
     }

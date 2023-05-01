@@ -30,19 +30,19 @@ public class LevelClearedUI : MonoBehaviour
         continueButton.onClick.AddListener(() => {
             FindObjectOfType<HUD>()?.gameObject.SetActive(false);
 
-            if (GameManager.Instance.hasLevelFailed) {
-                gameState.currentStageNumber--;
+            if (!GameManager.Instance.hasLevelFailed) {
+                playerInventory.Save();
+                gameState.Save();
             }
-
-            gameState.Save();
-            playerInventory.Save();
 
             SceneManager.LoadScene("Shop");
         });
 
         quitButton.onClick.AddListener(() => {
-            gameState.Save();
-            playerInventory.Save();
+            if (!GameManager.Instance.hasLevelFailed) {
+                gameState.Save();
+                playerInventory.Save();
+            }
 
             SceneManager.LoadScene("MainMenu");
         });
