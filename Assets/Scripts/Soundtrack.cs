@@ -14,10 +14,7 @@ public class Soundtrack : MonoBehaviour
     private float maxVolume = 0.3f;
     private float fadeOutTime = 5f;
 
-
     void Awake () {
-        maxVolume = maxVolume * audioSettings.musicVolume;
-
         audioSource = GetComponent<AudioSource>();
         volume = maxVolume;
     }
@@ -27,7 +24,7 @@ public class Soundtrack : MonoBehaviour
             volume = Mathf.MoveTowards(volume, 0f, maxVolume / fadeOutTime * Time.deltaTime);
         }
 
-        audioSource.volume = volume;
+        audioSource.volume = volume * audioSettings.musicVolume;
 
         if (volume <= 0f) {
             if (audioSource.isPlaying) {

@@ -1186,6 +1186,7 @@ GameObject:
   m_Component:
   - component: {fileID: 752773832}
   - component: {fileID: 752773834}
+  - component: {fileID: 752773835}
   m_Layer: 5
   m_Name: SoundPanel
   m_TagString: Untagged
@@ -1225,6 +1226,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 752773831}
   m_CullTransparentMesh: 1
+--- !u!114 &752773835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752773831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 723aecd0df8566b8196bc066fd9ca70c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSettings: {fileID: 11400000, guid: 0a07ab89cf494226c99ce4323ce098ef, type: 2}
+  masterSlider: {fileID: 677950259}
+  musicSlider: {fileID: 201143839}
 --- !u!1 &849082579
 GameObject:
   m_ObjectHideFlags: 0
@@ -2312,8 +2328,6 @@ MonoBehaviour:
   playerInventory: {fileID: 11400000, guid: 5b4ff3dd376eb975abb2ec09f95a2184, type: 2}
   playButton: {fileID: 2018599352}
   quitButton: {fileID: 1764860151}
-  masterSlider: {fileID: 677950259}
-  musicSlider: {fileID: 201143839}
   resetProgressButton: {fileID: 443482587}
 --- !u!1 &1764860149
 GameObject:
