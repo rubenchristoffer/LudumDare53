@@ -36,6 +36,8 @@ public class PlayerInventory : ScriptableObject
 
         PlayerPrefs.SetInt("HasAK", hasAK ? 1 : 0);
         PlayerPrefs.SetInt("AKAmmo", akAmmo);
+
+        PlayerPrefs.Save();
     }
 
     public void Load () {

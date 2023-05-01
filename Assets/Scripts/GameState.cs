@@ -26,6 +26,7 @@ public class GameState : ScriptableObject
 
     public void Save () {
         PlayerPrefs.SetInt("CurrentStage", currentStageNumber);
+        PlayerPrefs.Save();
     }
 
     public void Load () {

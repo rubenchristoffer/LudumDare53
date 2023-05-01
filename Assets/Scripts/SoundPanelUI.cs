@@ -21,11 +21,13 @@ public class SoundPanelUI : MonoBehaviour
          masterSlider.onValueChanged.AddListener((float value) => {
             PlayerPrefs.SetFloat("MasterVolume", value);
             AudioListener.volume = value;
+            PlayerPrefs.Save();
         });
 
         musicSlider.onValueChanged.AddListener((float value) => {
             audioSettings.musicVolume = value;
             PlayerPrefs.SetFloat("MusicVolume", value);
+            PlayerPrefs.Save();
         });
     }
 }
