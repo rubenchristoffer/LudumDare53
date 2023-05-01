@@ -1,4 +1,4 @@
-# Deliver me from Evil
+# Deliver Me From Evil
 Check out the [official submission](https://ldjam.com/events/ludum-dare/53/$355714).
 
 
