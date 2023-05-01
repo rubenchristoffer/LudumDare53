@@ -7,7 +7,6 @@ public class Gun : MonoBehaviour
 
     public PlayerInventory playerInventory;
     public GameObject gunFireSound;
-    public float damage = 0.25f;
     public float timeBetweenFire = 0.1f;
     public Transform aimPoint;
     public GameObject projectilePrefab;

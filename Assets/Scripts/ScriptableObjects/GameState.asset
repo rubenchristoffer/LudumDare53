@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a8ca2ac90a9d2db0a07a4720ed65b85, type: 3}
   m_Name: GameState
   m_EditorClassIdentifier: 
-  killCount: 0
+  killCount: 2
   moneyGained: 0
   currentStage:
-    spawnCooldown: 1.621319
-    mapSizeFactor: 10
-    jobPrice: 2066
-  currentStageNumber: 9
-  livingEnemies: 14
+    spawnCooldown: 0.22173446
+    mapSizeFactor: 12
+    jobPrice: 5669
+  currentStageNumber: 12
+  livingEnemies: 71

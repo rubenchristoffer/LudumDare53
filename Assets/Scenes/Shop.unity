@@ -3034,7 +3034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b69879b029648571a3ead7274c548a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 20
+  cost: 1
   unlockCost: 1000
   playerInventory: {fileID: 11400000, guid: 5b4ff3dd376eb975abb2ec09f95a2184, type: 2}
   buyButton: {fileID: 1159798826}

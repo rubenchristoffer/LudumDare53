@@ -632,7 +632,7 @@ MonoBehaviour:
   damage: 0.2
   timeBetweenFire: 0.1
   aimPoint: {fileID: 675148298}
-  projectilePrefab: {fileID: 9083644523671859837, guid: 41e4492444568744b87445e5ccfc51dd,
+  projectilePrefab: {fileID: 9083644523671859837, guid: d652483505b231076bd8ff78b11afdb2,
     type: 3}
   enemyLayerMask:
     serializedVersion: 2
