@@ -15,8 +15,8 @@ MonoBehaviour:
   killCount: 0
   moneyGained: 0
   currentStage:
-    spawnCooldown: 0.2
-    mapSizeFactor: 8
-    jobPrice: 274
-  currentStageNumber: 3
-  livingEnemies: 102
+    spawnCooldown: 1.621319
+    mapSizeFactor: 10
+    jobPrice: 2066
+  currentStageNumber: 9
+  livingEnemies: 14

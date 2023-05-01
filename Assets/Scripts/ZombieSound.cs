@@ -7,6 +7,8 @@ public class ZombieSound : MonoBehaviour
 
     public AudioSource[] normalSounds;
     public AudioSource[] attackSounds;
+    public AudioSource[] dieSounds;
+    public AudioSource[] hitSounds;
     public float playDistance = 30f;
 
     private float noiseTimer;
@@ -20,6 +22,20 @@ public class ZombieSound : MonoBehaviour
 
         enemy.onAttack.AddListener(() => {
             var sound = attackSounds[Random.Range(0, attackSounds.Length)];
+            sound.pitch = Random.Range(0.9f, 1.1f);
+
+            sound.Play();
+        });
+
+        enemy.onEntityDie.AddListener(() => {
+            var sound = dieSounds[Random.Range(0, dieSounds.Length)];
+            sound.pitch = Random.Range(0.9f, 1.1f);
+
+            sound.Play();
+        });
+
+        enemy.onEntityTakeDamage.AddListener((damage, pushForce) => {
+            var sound = hitSounds[Random.Range(0, hitSounds.Length)];
             sound.pitch = Random.Range(0.9f, 1.1f);
 
             sound.Play();
