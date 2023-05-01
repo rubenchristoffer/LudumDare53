@@ -13,14 +13,24 @@ public class PlayerInventoryController : MonoBehaviour
 
     private Entity entity;
     private List<Weapon> weapons = new List<Weapon>();
-    private Weapon currentlyEquippedWeapon;
+    private Weapon _currentlyEquippedWeapon;
+
+    public Weapon currentlyEquippedWeapon => _currentlyEquippedWeapon;
 
     [System.Serializable]
     public class Weapon
     {
+        public WeaponType weaponType;
         public KeyCode keyCodeToEquip;
         public GameObject physicalObject;
         public bool isAvailable;
+    }
+
+   public enum WeaponType {
+        Pistol,
+        Uzi,
+
+        Pepperoni
     }
 
     void Start()
@@ -34,6 +44,7 @@ public class PlayerInventoryController : MonoBehaviour
 
         weapons.Add(new Weapon
         {
+            weaponType = WeaponType.Pistol,
             keyCodeToEquip = KeyCode.Alpha1,
             physicalObject = transform.FindAnyChildWithName("Pistol").gameObject,
             isAvailable = true
@@ -41,6 +52,7 @@ public class PlayerInventoryController : MonoBehaviour
 
         weapons.Add(new Weapon
         { 
+            weaponType = WeaponType.Uzi,
             keyCodeToEquip = KeyCode.Alpha2, 
             physicalObject = transform.FindAnyChildWithName("Uzi").gameObject,
             isAvailable = playerInventory.hasUzi
@@ -52,7 +64,7 @@ public class PlayerInventoryController : MonoBehaviour
         }
 
         weapons[0].physicalObject.SetActive(true);
-        currentlyEquippedWeapon = weapons[0];
+        _currentlyEquippedWeapon = weapons[0];
     }
 
     void Update()
@@ -79,9 +91,9 @@ public class PlayerInventoryController : MonoBehaviour
         {
             if (weapon.isAvailable && Input.GetKeyDown(weapon.keyCodeToEquip))
             {
-                currentlyEquippedWeapon?.physicalObject.SetActive(false);
-                currentlyEquippedWeapon = weapon;
-                currentlyEquippedWeapon.physicalObject.SetActive(true);
+                _currentlyEquippedWeapon?.physicalObject.SetActive(false);
+                _currentlyEquippedWeapon = weapon;
+                _currentlyEquippedWeapon.physicalObject.SetActive(true);
             }
         }
     }

@@ -18,8 +18,6 @@ public class HUD : MonoBehaviour
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI knockText;
     public TextMeshProUGUI nobodyRespondsText;
-    public GameObject pepperoniPanel;
-    public TextMeshProUGUI pepperoniAmountText;
     public Animator fadePanelAnimator;
     public TextMeshProUGUI ammoText;
 
@@ -34,11 +32,7 @@ public class HUD : MonoBehaviour
 
     void Awake()
     {
-        _player = GameObject.FindWithTag("Player").GetComponent<Entity>();  
-
-        if (playerInventory.pepperoniAmount == 0) {
-            pepperoniPanel.SetActive(false);
-        }
+        _player = GameObject.FindWithTag("Player").GetComponent<Entity>();
     }
 
     void Start () {
@@ -55,7 +49,6 @@ public class HUD : MonoBehaviour
         distanceText.text = playerInventory.hasFoundGPS ? $"{distance}m" : "No GPS found";
         moneyText.text = $"${gameState.moneyGained}";
 
-        pepperoniAmountText.text = $"{playerInventory.pepperoniAmount}";
         currentStageText.text = $"Stage {gameState.currentStageNumber}";
 
         healthText.text = $"{Mathf.CeilToInt(_player.health)}";
