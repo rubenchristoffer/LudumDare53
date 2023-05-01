@@ -14,6 +14,7 @@ public class Entity : MonoBehaviour
     public bool isDead { get; private set; }
 
     public UnityEvent onEntityDie { get; private set; } = new UnityEvent(); 
+    public UnityEvent<float, Vector3> onEntityTakeDamage { get; private set; } = new UnityEvent<float, Vector3>();
 
     private Rigidbody _rigidBody;
 
@@ -27,6 +28,7 @@ public class Entity : MonoBehaviour
         }
 
         health -= damageToInflict;
+        onEntityTakeDamage.Invoke(damageToInflict, pushForce);
 
         _rigidBody.AddForce(pushForce, ForceMode.Impulse);
 

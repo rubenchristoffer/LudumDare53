@@ -12,6 +12,8 @@ public class Enemy : Entity
     public GameState gameState;
     public Animator animator;
     public Drop[] drops;
+    public Transform bloodSplatterSpawnLocation;
+    public GameObject bloodSplatterPrefab;
 
     private Entity _player;
     private Rigidbody _rigidbody;
@@ -56,7 +58,18 @@ public class Enemy : Entity
             if (drop.prefab != null) {
                 Instantiate<GameObject>(drop.prefab, transform.position + Vector3.up * 0.5f, drop.prefab.transform.rotation);
             }
+
+            StartCoroutine(DieAfterDelay());
         });
+
+        onEntityTakeDamage.AddListener((damage, pushForce) => {
+            Instantiate<GameObject>(bloodSplatterPrefab, bloodSplatterSpawnLocation.position, Quaternion.LookRotation(pushForce));
+        });
+    }
+
+    IEnumerator DieAfterDelay () {
+        yield return new WaitForSeconds(60f);
+        Destroy(gameObject);
     }
 
     // Update is called once per frame
