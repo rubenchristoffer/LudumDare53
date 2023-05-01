@@ -34,6 +34,7 @@ public class ThrowableExplosive : MonoBehaviour
             .Distinct();
 
         foreach (var enemy in enemiesHit) {
+            var dir = transform.position - enemy.transform.position;
             var distance = Vector3.Distance(transform.position, enemy.transform.position);
             var damageFactor = 1f - (distance / explosionRadius);
 

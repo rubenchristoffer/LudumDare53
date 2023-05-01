@@ -24,6 +24,7 @@ public class WeaponBuyUI : MonoBehaviour
         get { 
             return weaponType switch {
                 WeaponType.Pepperoni => playerInventory.pepperoniAmount,
+                WeaponType.Grenade => playerInventory.grenadeAmount,
                 WeaponType.Uzi => playerInventory.uziAmmo,
                 _ => 0
             };
@@ -32,6 +33,7 @@ public class WeaponBuyUI : MonoBehaviour
         set {
             switch (weaponType) {
                 case WeaponType.Pepperoni: playerInventory.pepperoniAmount = value; break;
+                case WeaponType.Grenade: playerInventory.grenadeAmount = value; break;
                 case WeaponType.Uzi: playerInventory.uziAmmo = value; break;
             }
         }
