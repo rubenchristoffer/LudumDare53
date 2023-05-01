@@ -24,6 +24,7 @@ public class WeaponUI : MonoBehaviour
             WeaponType.Pepperoni => playerInventory.pepperoniAmount,
             WeaponType.Grenade => playerInventory.grenadeAmount,
             WeaponType.Uzi => playerInventory.uziAmmo,
+            WeaponType.AK47 => playerInventory.akAmmo,
             _ => 0
         };
     }
@@ -31,6 +32,7 @@ public class WeaponUI : MonoBehaviour
     public bool canUse {
         get => type switch {
             WeaponType.Uzi => playerInventory.hasUzi,
+            WeaponType.AK47 => playerInventory.hasAK,
             _ => true
         };
     }

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027c957a1d0678996bce337c28a57de4, type: 3}
   m_Name: PlayerInventory
   m_EditorClassIdentifier: 
-  money: 29351
-  pepperoniAmount: 3
-  grenadeAmount: 4
+  money: 2123751
+  pepperoniAmount: 1228
+  grenadeAmount: 1019
   hasFoundGPS: 1
   hasUzi: 1
-  uziAmmo: 1840
+  uziAmmo: 4836
   hasAK: 1
-  akAmmo: 554
+  akAmmo: 565656
