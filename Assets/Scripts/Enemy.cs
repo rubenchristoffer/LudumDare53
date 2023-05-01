@@ -63,7 +63,7 @@ public class Enemy : Entity
         });
 
         onEntityTakeDamage.AddListener((damage, pushForce) => {
-            Instantiate<GameObject>(bloodSplatterPrefab, bloodSplatterSpawnLocation.position, Quaternion.LookRotation(pushForce));
+            Instantiate<GameObject>(bloodSplatterPrefab, bloodSplatterSpawnLocation.position + pushForce.normalized * 0.5f, Quaternion.LookRotation(pushForce));
         });
     }
 
