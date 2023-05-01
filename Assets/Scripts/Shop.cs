@@ -12,21 +12,7 @@ public class Shop : MonoBehaviour
     public TextMeshProUGUI moneyText;
     public Button continueButton;
 
-    // Pepperoni
-    public const int pepperoniCost = 20;
-    public TextMeshProUGUI pepperoniAmountText;
-    public TextMeshProUGUI pepperoniCostText;
-    public Button pepperoniBuyButton;
-
     void Awake () {
-        pepperoniCostText.text = $"${pepperoniCost}";
-        pepperoniBuyButton.onClick.AddListener(() => {
-            if (playerInventory.money >= pepperoniCost) {
-                playerInventory.pepperoniAmount++;
-                playerInventory.money -= pepperoniCost;
-            }
-        });
-
         continueButton.onClick.AddListener(() => {
             SceneManager.LoadScene("Game");
         });
@@ -34,9 +20,6 @@ public class Shop : MonoBehaviour
 
     void Update () {
         moneyText.text = $"${playerInventory.money}";
-
-        pepperoniAmountText.text = $"({playerInventory.pepperoniAmount})";
-        pepperoniBuyButton.interactable = playerInventory.money >= pepperoniCost;
     }
 
 }
