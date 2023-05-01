@@ -10,6 +10,8 @@ public class Shop : MonoBehaviour
 
     public PlayerInventory playerInventory;
     public TextMeshProUGUI moneyText;
+    public TextMeshProUGUI buyBulkText;
+    public Slider buyBulkSlider;
     public Button continueButton;
 
     void Awake () {
@@ -20,6 +22,7 @@ public class Shop : MonoBehaviour
 
     void Update () {
         moneyText.text = $"${playerInventory.money}";
+        buyBulkText.text = $"Buy bulk: x {(int)buyBulkSlider.value}";
     }
 
 }

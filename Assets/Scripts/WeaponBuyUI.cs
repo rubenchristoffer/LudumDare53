@@ -18,6 +18,7 @@ public class WeaponBuyUI : MonoBehaviour
     public bool isItem;
 
     private TextMeshProUGUI buyButtonText;
+    private Shop shop;
 
     public int amount {
         get { 
@@ -53,9 +54,10 @@ public class WeaponBuyUI : MonoBehaviour
         }
     }
 
-    public int currentCost => isUnlocked ? cost : unlockCost;
+    public int currentCost => isUnlocked ? cost * (int)shop.buyBulkSlider.value : unlockCost;
 
     void Awake () {
+        shop = GetComponentInParent<Shop>();
         buyButtonText = buyButton.GetComponentInChildren<TextMeshProUGUI>();
 
         buyButton.onClick.AddListener(() => {
@@ -63,7 +65,7 @@ public class WeaponBuyUI : MonoBehaviour
                 playerInventory.money -= currentCost;
 
                 if (isUnlocked) {
-                    amount++;
+                    amount += (int)shop.buyBulkSlider.value;
                 } else {
                     isUnlocked = true;
                 }

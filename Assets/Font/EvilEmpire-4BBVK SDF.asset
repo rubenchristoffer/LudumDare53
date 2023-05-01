@@ -9,8 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: EvilEmpire-4BBVK Atlas Material
   m_Shader: {fileID: 4800000, guid: 68e6db2ebdc24f95958faec2be5558d6, type: 3}
-  m_ValidKeywords:
-  - GLOW_ON
+  m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -750,6 +749,21 @@ MonoBehaviour:
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
+  - m_Index: 56
+    m_Metrics:
+      m_Width: 36.75
+      m_Height: 62.96875
+      m_HorizontalBearingX: 0.125
+      m_HorizontalBearingY: 62.96875
+      m_HorizontalAdvance: 43.328125
+    m_GlyphRect:
+      m_X: 688
+      m_Y: 174
+      m_Width: 37
+      m_Height: 63
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
   - m_Index: 57
     m_Metrics:
       m_Width: 36.734375
@@ -762,6 +776,36 @@ MonoBehaviour:
       m_Y: 178
       m_Width: 37
       m_Height: 63
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+  - m_Index: 59
+    m_Metrics:
+      m_Width: 26.203125
+      m_Height: 80.28125
+      m_HorizontalBearingX: 0.171875
+      m_HorizontalBearingY: 71.71875
+      m_HorizontalAdvance: 30.71875
+    m_GlyphRect:
+      m_X: 632
+      m_Y: 176
+      m_Width: 27
+      m_Height: 81
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+  - m_Index: 61
+    m_Metrics:
+      m_Width: 26.203125
+      m_Height: 80.28125
+      m_HorizontalBearingX: 0.171875
+      m_HorizontalBearingY: 71.71875
+      m_HorizontalAdvance: 30.71875
+    m_GlyphRect:
+      m_X: 580
+      m_Y: 177
+      m_Width: 27
+      m_Height: 81
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
@@ -1155,51 +1199,6 @@ MonoBehaviour:
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
-  - m_Index: 56
-    m_Metrics:
-      m_Width: 36.75
-      m_Height: 62.96875
-      m_HorizontalBearingX: 0.125
-      m_HorizontalBearingY: 62.96875
-      m_HorizontalAdvance: 43.328125
-    m_GlyphRect:
-      m_X: 688
-      m_Y: 174
-      m_Width: 37
-      m_Height: 63
-    m_Scale: 1
-    m_AtlasIndex: 0
-    m_ClassDefinitionType: 0
-  - m_Index: 59
-    m_Metrics:
-      m_Width: 26.203125
-      m_Height: 80.28125
-      m_HorizontalBearingX: 0.171875
-      m_HorizontalBearingY: 71.71875
-      m_HorizontalAdvance: 30.71875
-    m_GlyphRect:
-      m_X: 632
-      m_Y: 176
-      m_Width: 27
-      m_Height: 81
-    m_Scale: 1
-    m_AtlasIndex: 0
-    m_ClassDefinitionType: 0
-  - m_Index: 61
-    m_Metrics:
-      m_Width: 26.203125
-      m_Height: 80.28125
-      m_HorizontalBearingX: 0.171875
-      m_HorizontalBearingY: 71.71875
-      m_HorizontalAdvance: 30.71875
-    m_GlyphRect:
-      m_X: 580
-      m_Y: 177
-      m_Width: 27
-      m_Height: 81
-    m_Scale: 1
-    m_AtlasIndex: 0
-    m_ClassDefinitionType: 0
   m_CharacterTable:
   - m_ElementType: 1
     m_Unicode: 32
@@ -1362,8 +1361,20 @@ MonoBehaviour:
     m_GlyphIndex: 55
     m_Scale: 1
   - m_ElementType: 1
+    m_Unicode: 88
+    m_GlyphIndex: 56
+    m_Scale: 1
+  - m_ElementType: 1
     m_Unicode: 89
     m_GlyphIndex: 57
+    m_Scale: 1
+  - m_ElementType: 1
+    m_Unicode: 91
+    m_GlyphIndex: 59
+    m_Scale: 1
+  - m_ElementType: 1
+    m_Unicode: 93
+    m_GlyphIndex: 61
     m_Scale: 1
   - m_ElementType: 1
     m_Unicode: 95
@@ -1466,20 +1477,12 @@ MonoBehaviour:
     m_GlyphIndex: 89
     m_Scale: 1
   - m_ElementType: 1
+    m_Unicode: 160
+    m_GlyphIndex: 3
+    m_Scale: 1
+  - m_ElementType: 1
     m_Unicode: 8230
     m_GlyphIndex: 188
-    m_Scale: 1
-  - m_ElementType: 1
-    m_Unicode: 88
-    m_GlyphIndex: 56
-    m_Scale: 1
-  - m_ElementType: 1
-    m_Unicode: 91
-    m_GlyphIndex: 59
-    m_Scale: 1
-  - m_ElementType: 1
-    m_Unicode: 93
-    m_GlyphIndex: 61
     m_Scale: 1
   m_AtlasTextures:
   - {fileID: 7220452660502801258}
