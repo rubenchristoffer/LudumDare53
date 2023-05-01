@@ -30,7 +30,9 @@ public class Entity : MonoBehaviour
         health -= damageToInflict;
         onEntityTakeDamage.Invoke(damageToInflict, pushForce);
 
-        _rigidBody.AddForce(pushForce, ForceMode.Impulse);
+        if (pushForce != Vector3.zero) {
+            _rigidBody.AddForce(pushForce, ForceMode.Impulse);
+        }
 
         if (health <= 0 && !isDead) {
             isDead = true;
