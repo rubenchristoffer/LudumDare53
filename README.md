@@ -3,17 +3,15 @@ Check out the [official submission](https://ldjam.com/events/ludum-dare/53/$3557
 
 
 ## Tools used
-Game Engine:
-- Unity
-Modelling:
-- Blender
-Image manipulation:
-- GIMP
-SFX:
-- SFRX: https://sfxr.me/
-- Audacity
-Soundtrack:
-- LMMS
+Game Engine: Unity  
+Modelling: Blender  
+Image manipulation / textures: GIMP  
+
+Sound effects:  
+- [SFRX](https://sfxr.me/)   
+- Audacity    
+
+Soundtrack: LMMS  
 
 ## Attribution
 All assets except the following were made by me within the 72 hour time window:
