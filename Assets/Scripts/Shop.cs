@@ -9,6 +9,7 @@ public class Shop : MonoBehaviour
 {
 
     public PlayerInventory playerInventory;
+    public GameState gameState;
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI buyBulkText;
     public Slider buyBulkSlider;
@@ -16,6 +17,7 @@ public class Shop : MonoBehaviour
 
     void Awake () {
         playerInventory.Load();
+        gameState.Load();
 
         continueButton.onClick.AddListener(() => {
             playerInventory.Save();

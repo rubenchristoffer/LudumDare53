@@ -5770,6 +5770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 11400000, guid: 5b4ff3dd376eb975abb2ec09f95a2184, type: 2}
+  gameState: {fileID: 11400000, guid: 5e15fb6996d008b3cadeff512e1ea0d9, type: 2}
   moneyText: {fileID: 1199776896}
   buyBulkText: {fileID: 682737229}
   buyBulkSlider: {fileID: 1723939079}
