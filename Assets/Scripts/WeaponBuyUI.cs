@@ -26,6 +26,7 @@ public class WeaponBuyUI : MonoBehaviour
                 WeaponType.Pepperoni => playerInventory.pepperoniAmount,
                 WeaponType.Grenade => playerInventory.grenadeAmount,
                 WeaponType.Uzi => playerInventory.uziAmmo,
+                WeaponType.AK47 => playerInventory.akAmmo,
                 _ => 0
             };
         }
@@ -35,6 +36,7 @@ public class WeaponBuyUI : MonoBehaviour
                 case WeaponType.Pepperoni: playerInventory.pepperoniAmount = value; break;
                 case WeaponType.Grenade: playerInventory.grenadeAmount = value; break;
                 case WeaponType.Uzi: playerInventory.uziAmmo = value; break;
+                case WeaponType.AK47: playerInventory.akAmmo = value; break;
             }
         }
     }
@@ -46,12 +48,14 @@ public class WeaponBuyUI : MonoBehaviour
             return weaponType switch
             {
                 WeaponType.Uzi => playerInventory.hasUzi,
+                WeaponType.AK47 => playerInventory.hasAK,
                 _ => true
             };
         }
         set {
             switch (weaponType) {
                 case WeaponType.Uzi: playerInventory.hasUzi = value; break;
+                case WeaponType.AK47: playerInventory.hasAK = value; break;
             }
         }
     }
