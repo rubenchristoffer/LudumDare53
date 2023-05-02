@@ -59,14 +59,16 @@ public class GameManager : MonoBehaviour
         gameState.currentStage = Stage.GetStage(gameState.currentStageNumber);
 
         LevelGenerator.Instance.GenerateMap(gameState.currentStage.mapSizeFactor);
+    }
 
+    void Start () {
         Transform player = GameObject.FindWithTag("Player").transform;
 
-        player.position = FindObjectsOfType<SpawnPoint>()
+        player.position = GameObject.FindObjectsOfType<SpawnPoint>()
             .Where(sp => sp.isActivated)
             .First().transform.position;
 
-        enemySpawners = FindObjectsOfType<EnemySpawner>();
+        enemySpawners = GameObject.FindObjectsOfType<EnemySpawner>();
         enemySpawners = enemySpawners
             .OrderBy(key => Random.Range(0, enemySpawners.Length - 1))
             .ToArray();
