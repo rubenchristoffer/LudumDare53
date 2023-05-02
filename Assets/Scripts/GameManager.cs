@@ -9,9 +9,12 @@ public class GameManager : MonoBehaviour
 
     private static GameManager _instance;
 
-    public static GameManager Instance {
-        get {
-            if (_instance == null) {
+    public static GameManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
                 _instance = GameObject.FindObjectOfType<GameManager>();
             }
 
@@ -31,25 +34,30 @@ public class GameManager : MonoBehaviour
     private int currentSpawnerIndex;
     private float enemySpawnTimer;
 
-    public void SetLevelCleared () {
-        if (!isLevelCleared) {
+    public void SetLevelCleared()
+    {
+        if (!isLevelCleared)
+        {
             isLevelCleared = true;
             onLevelCleared.Invoke();
         }
     }
 
-    public void SetLevelFailed () {
-        if (!hasLevelFailed) {
+    public void SetLevelFailed()
+    {
+        if (!hasLevelFailed)
+        {
             hasLevelFailed = true;
         }
     }
 
-    void Awake () {
+    void Awake()
+    {
         playerInventory.hasFoundGPS = false;
         gameState.ResetCounters();
         gameState.currentStageNumber++;
         gameState.currentStage = Stage.GetStage(gameState.currentStageNumber);
-        
+
         LevelGenerator.Instance.GenerateMap(gameState.currentStage.mapSizeFactor);
 
         Transform player = GameObject.FindWithTag("Player").transform;
@@ -64,14 +72,18 @@ public class GameManager : MonoBehaviour
             .ToArray();
     }
 
-    void Update () {
-        if (enemySpawnTimer <= 0f) {
+    void Update()
+    {
+        if (enemySpawnTimer <= 0f)
+        {
             enemySpawners[currentSpawnerIndex].Spawn();
 
             currentSpawnerIndex = (currentSpawnerIndex + 1) % enemySpawners.Length;
 
             enemySpawnTimer = gameState.currentStage.spawnCooldown;
-        } else {
+        }
+        else
+        {
             enemySpawnTimer -= Time.deltaTime;
         }
     }

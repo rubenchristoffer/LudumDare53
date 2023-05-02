@@ -30,12 +30,9 @@ public class HUD : MonoBehaviour
 
     private House correctHouse;
 
-    void Awake()
-    {
-        _player = GameObject.FindWithTag("Player").GetComponent<Entity>();
-    }
-
     void Start () {
+        _player = GameObject.FindWithTag("Player").GetComponent<Entity>();
+
         correctHouse = GameObject.FindObjectsOfType<House>()
             .Where(house => house.correctHouse)
             .First();
