@@ -6,11 +6,7 @@ Check out the [official submission](https://ldjam.com/events/ludum-dare/53/deliv
 Game Engine: Unity  
 Modelling: Blender  
 Image manipulation / textures: GIMP  
-
-Sound effects:  
-- [SFRX](https://sfxr.me/)   
-- Audacity    
-
+Sound effects:  [SFXR](https://sfxr.me/) & Audacity  
 Soundtrack: LMMS  
 
 ## Attribution
