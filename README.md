@@ -1,6 +1,7 @@
 # Deliver Me From Evil
 Check out the [official submission](https://ldjam.com/events/ludum-dare/53/deliver-me-from-evil).
 
+![Cover_Image](https://github.com/rubenchristoffer/LudumDare53/assets/54401232/98bad3f9-5fd0-4ac0-96f4-317340db1a8d)
 
 ## Tools used
 Game Engine: Unity  
